@@ -45,6 +45,98 @@
   .about-containers {
     margin-top: 0;
   }
+  .gradient-text {
+    font-size: 3rem; /* lg:text-5xl */
+    line-height: 4.5rem; /* lg:leading-[72px] */
+  }
+}
+
+@media (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+
+  .experience-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-containers {
+    grid-template-columns: 1fr;
+  }
+
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+
+  .section__text {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.2rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+  .projects-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-containers {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .project-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .career-section {
+    padding: 4rem 1rem 2rem;
+  }
+
+  .experience-stats {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .stat-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .timeline-card {
+    margin-left: 2rem;
+  }
+  .gradient-text {
+    font-size: 2.25rem; /* md:text-4xl */
+    line-height: 3.125rem; /* md:leading-[50px] */
+  }
 }
 
 @media screen and (max-width: 600px) {

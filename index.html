@@ -1,382 +1,544 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Evans Gitahi</title>
-    <link rel="stylesheet" href="./src/style.css" />
-    <link rel="stylesheet" href="./src/mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Evans Gitahi</div>
-      <div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evans Gitahi</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <link rel="stylesheet" href="./src/mediaqueries.css" />
+  <link href="./src/output.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav id="desktop-nav" class="nav-container">
+    <div class="logo">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Software Developer</span>
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#career">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Software Developer</span>
+    </div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="menu-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#career">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <section id="profile">
+    <!-- <div class="section__pic-container">
+        <img src="./src/assets/profile-pic-2.png" alt="Evans Gitahi profile picture" />
+      </div> -->
+    <div class="section__text">
+      <p class="section__text__p1">Hello, I'm</p>
+      <h1 class="title gradient-text">Evans Gitahi</h1>
+      <p class="section__text__p2">a Software Developer</p>
+      <div class="btn-container">
+        <button class="btn btn-color-2" onclick="window.open('./src/assets/resume-example.pdf')">
+          Download CV
+        </button>
+        <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <img src="./src/assets/linkedin.png" alt="My LinkedIn profile" class="icon"
+          onclick="location.href='https://linkedin.com/'" />
+        <img src="./src/assets/github.png" alt="My Github profile" class="icon"
+          onclick="location.href='https://github.com/'" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="min-h-screen pb-32 bg-orange-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section__text__p1">Get to Know More</p>
+      <h1 class="title">About Me</h1>
+
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <!-- Experience Card -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#c05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase-2">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9z" />
+              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">Experience</h3>
+          <p class="text-center text-gray-600">
+            Full-stack Developer<br />
+            2+ years
+          </p>
+        </div>
+
+        <!-- Education Card -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#c05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-school">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+              <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">Education</h3>
+          <p class="text-center text-gray-600">
+            Software Engineering Certificate <br />
+            B.Sc. Mechanical Engineering
+          </p>
+        </div>
+
+        <!-- Expertise Card -->
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="#c05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-user-code">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" />
+              <path d="M20 21l2 -2l-2 -2" />
+              <path d="M17 17l-2 2l2 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-center mb-2">Expertise</h3>
+          <p class="text-center text-gray-600">
+            Full-stack Development<br />
+            UI/UX Design
+          </p>
+        </div>
+      </div>
+
+      <!-- About Text -->
+      <div class="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto">
+        <p class="text-gray-700 leading-relaxed">
+          I'm a full-stack developer specializing in building high-performing web applications.
+          With expertise in front-end technologies like React.js, Next.js, and Tailwind CSS,
+          as well as back-end development using Python, Django, and PostgreSQL, I bring a
+          comprehensive approach to software development. I've contributed to various significant
+          projects, including the YAKWETU super app and JetBetKe's sports betting platform,
+          where I focused on creating seamless user experiences and optimizing application
+          performance. My experience extends to UI/UX design using Figma, allowing me to bridge
+          the gap between design and development effectively.
+        </p>
+      </div>
+
+      <!-- Arrow -->
+      <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
+
+    </div>
+  </section>
+
+  <section id="experience" class="experience-section">
+    <p class="section__text__p1">Explore My</p>
+    <h1 class="title">Skills</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container">
+          <h2 class="experience-sub-title">Frontend Development</h2>
+          <div class="article-container">
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>React.js & Next.js</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>TypeScript</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>React Native</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Tailwind CSS</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>UI/UX Design (Figma)</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Web Animations</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="details-container">
+          <h2 class="experience-sub-title">Backend Development</h2>
+          <div class="article-container">
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>Python & Django</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>PostgreSQL</h3>
+                <p>Experienced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>REST APIs</h3>
+                <p>Advanced</p>
+              </div>
+            </article>
+            <article>
+              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
+              <div>
+                <h3>CI/CD</h3>
+                <p>Intermediate</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#career'" />
+  </section>
+
+  <!-- PROFESSIONAL eXPERIENCE  -->
+  <section id="career" class="career-section">
+    <div class="section-background"></div>
+    <p class="section__text__p1">Discover My</p>
+    <h1 class="title">Professional Journey</h1>
+
+    <div class="experience-stats">
+      <div class="stat-item">
+        <span class="stat-number">4+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3+</span>
+        <span class="stat-label">Companies Worked</span>
+      </div>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-card current">
+        <div class="timeline-header">
+          <div class="company-logo">
+            <div class="logo-placeholder">MA</div>
+          </div>
+          <div class="header-content">
+            <span class="date">Aug 2023 - Present</span>
+            <div class="company-badge">
+              <span class="company">MyMovies Africa™</span>
+              <span class="role">Front-end Developer</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <div class="content-body">
+            <ul class="achievements">
+              <li>Building a cross-platform mobile app using React Native for entertainment content</li>
+              <li>Developed complex ticketing platform with payment integrations</li>
+              <li>Integrated monitoring tools like Sentry and Vercel</li>
+              <li>Designed UI/UX for YAKWETU super app using Figma</li>
+              <li>Optimized legacy codebase for better performance</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span>React Native</span>
+            <span>Figma</span>
+            <span>Sentry</span>
+            <span>Vercel</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-year">2023</div>
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="company-logo">
+            <div class="logo-placeholder">JB</div>
+          </div>
+          <div class="header-content">
+            <span class="date">Sept 2023 - Jan 2024</span>
+            <div class="company-badge">
+              <span class="company">JetBetKe</span>
+              <span class="role">Front-end Developer</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <div class="content-body">
+            <ul class="achievements">
+              <li>Developed sports betting platform with Sportsbook and Casino access</li>
+              <li>Built high-performing web app using TypeScript & React.js</li>
+              <li>Integrated Redis for optimized performance</li>
+              <li>Implemented extensive third-party API integrations</li>
+              <li>Enhanced website performance and SEO</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span>TypeScript</span>
+            <span>React.js</span>
+            <span>Redis</span>
+            <span>REST APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="company-logo">
+            <div class="logo-placeholder">RH</div>
+          </div>
+          <div class="header-content">
+            <span class="date">May 2023 - Aug 2023</span>
+            <div class="company-badge">
+              <span class="company">Rentershub</span>
+              <span class="role">Full-Stack Developer</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <div class="content-body">
+            <ul class="achievements">
+              <li>Built comprehensive house-renting platform using Next.js and Django</li>
+              <li>Designed and implemented PostgreSQL data models</li>
+              <li>Implemented client-side routing and state management</li>
+              <li>Collaborated with product team on feature development</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span>Next.js</span>
+            <span>Django</span>
+            <span>PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <div class="company-logo">
+            <div class="logo-placeholder">M</div>
+          </div>
+          <div class="header-content">
+            <span class="date">Mar 2023 - Aug 2023</span>
+            <div class="company-badge">
+              <span class="company">Mentorlst</span>
+              <span class="role">Volunteer Front-end Developer</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-content">
+          <div class="content-body">
+            <ul class="achievements">
+              <li>Refactored codebase to improve maintainability</li>
+              <li>Implemented precise web designs with attention to detail</li>
+              <li>Collaborated on high-quality feature delivery</li>
+              <li>Conducted thorough code reviews</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span>React.js</span>
+            <span>TypeScript</span>
+            <span>CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
+
+  </section>
+
+
+
+  <!-- PROFESSIONAL eXPERIENCE -->
+
+  <section id="projects" class="projects-section">
+    <p class="section__text__p1">Browse My Recent</p>
+    <h1 class="title">Projects</h1>
+    <div class="experience-details-container">
+      <div class="about-containers">
+        <div class="details-container color-container">
+          <div class="article-container-project">
+            <img src="./src/assets/project-1.png" alt="YAKWETU Super App" class="project-img" />
+            <div class="project-tech-stack">
+              <span>Figma</span>
+              <span>UI/UX</span>
+              <span>React Native</span>
+            </div>
+          </div>
+          <h2 class="experience-sub-title project-title">YAKWETU Super App</h2>
+          <p class="project-description">
+            A comprehensive entertainment content platform featuring movie ticketing, content streaming, and an
+            intuitive user interface.
+            Developed the mobile app using React Native and implemented a complex ticketing system.
+          </p>
+          <div class="key-features">
+            <span>✓ Payment Integration</span>
+            <span>✓ Performance Tracking</span>
+            <span>✓ Custom Design System</span>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+              <img src="./src/assets/github.png" alt="GitHub" class="btn-icon" />
+              Github
+            </button>
+            <button class="btn btn-color-1 project-btn" onclick="location.href='#'">
+              <img src="./src/assets/link.png" alt="Live Demo" class="btn-icon" />
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container-project">
+            <img src="./src/assets/project-2.png" alt="Audiobooks Platform" class="project-img" />
+            <div class="project-tech-stack">
+              <span>Django</span>
+              <span>PostgreSQL</span>
+              <span>Cloudflare R2</span>
+            </div>
+          </div>
+          <h2 class="experience-sub-title project-title">Audiobooks Platform</h2>
+          <p class="project-description">
+            A full-featured audiobooks platform with streaming capabilities, user authentication, and integrated payment
+            system.
+            Built with Django backend and comprehensive API architecture.
+          </p>
+          <div class="key-features">
+            <span>✓ Paystack Integration</span>
+            <span>✓ Streaming Service</span>
+            <span>✓ User Management</span>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+              <img src="./src/assets/github.png" alt="GitHub" class="btn-icon" />
+              Github
+            </button>
+            <button class="btn btn-color-1 project-btn" onclick="location.href='#'">
+              <img src="./src/assets/link.png" alt="Live Demo" class="btn-icon" />
+              Live Demo
+            </button>
+          </div>
+        </div>
+
+        <div class="details-container color-container">
+          <div class="article-container-project">
+            <img src="./src/assets/project-3.png" alt="Renters Hub" class="project-img" />
+            <div class="project-tech-stack">
+              <span>Next.js</span>
+              <span>Tailwind</span>
+              <span>Mantine</span>
+            </div>
+          </div>
+          <h2 class="experience-sub-title project-title">Renters Hub</h2>
+          <p class="project-description">
+            A comprehensive house-renting platform built with Next.js and styled with Tailwind CSS and Mantine
+            components.
+            Features modern UI/UX design and seamless user experience.
+          </p>
+          <div class="key-features">
+            <span>✓ Property Search</span>
+            <span>✓ User Dashboard</span>
+            <span>✓ Responsive Design</span>
+          </div>
+          <div class="btn-container">
+            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+              <img src="./src/assets/github.png" alt="GitHub" class="btn-icon" />
+              Github
+            </button>
+            <button class="btn btn-color-1 project-btn" onclick="location.href='#'">
+              <img src="./src/assets/link.png" alt="Live Demo" class="btn-icon" />
+              Live Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+  </section>
+
+  <section id="contact">
+    <p class="section__text__p1">Get in Touch</p>
+    <h1 class="title">Contact Me</h1>
+    <div class="contact-info-upper-container">
+      <div class="contact-info-container">
+        <img src="./src/assets/email.png" alt="Email icon" class="icon contact-icon" />
+        <p><a href="mailto:evanygk@gmail.com">evanygk@gmail.com</a></p>
+      </div>
+      <div class="contact-info-container">
+        <img src="./src/assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <p><a href="https://www.linkedin.com/in/evans-gitahi/" target="_blank">LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience">Skills</a></li>
+          <li><a href="#career">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Evans Gitahi</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./src/assets/profile-pic-2.png" alt="Evans Gitahi profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Evans Gitahi</h1>
-        <p class="section__text__p2">Frontend Developer</p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./src/assets/resume-example.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./src/assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-          />
-          <img
-            src="./src/assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-          />
-        </div>
-      </div>
-    </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./src/assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./src/assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Frontend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./src/assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-              reprehenderit et laborum, rem, dolore eum quod voluptate
-              exercitationem nobis, nihil esse debitis maxime facere minus sint
-              delectus velit in eos quo officiis explicabo deleniti dignissimos.
-              Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-              reiciendis ea magnam? Nulla, impedit fuga!
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./src/assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>SASS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Material UI</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express JS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./src/assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./src/assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./src/assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./src/assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./src/assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./src/assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./src/assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./src/assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2023 Evans Gitahi. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
+    <p>Copyright &#169; 2025 Evans Gitahi. All Rights Reserved.</p>
+  </footer>
+  <script src="src/main.js"></script>
+</body>
+
 </html>
