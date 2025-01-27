@@ -67,10 +67,27 @@
         </button>
       </div>
       <div id="socials-container">
-        <img src="./src/assets/linkedin.png" alt="My LinkedIn profile" class="icon"
-          onclick="location.href='https://linkedin.com/'" />
-        <img src="./src/assets/github.png" alt="My Github profile" class="icon"
-          onclick="location.href='https://github.com/'" />
+        <a href="https://www.linkedin.com/in/evans-gitahi/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M8 11v5" />
+            <path d="M8 8v.01" />
+            <path d="M12 16v-5" />
+            <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+            <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+          </svg>
+        </a>
+        <a href="https://github.com/gitahievans" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -85,7 +102,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
           <div class="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="#c05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              stroke="#c05621" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase-2">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9z" />
@@ -103,7 +120,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
           <div class="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="#c05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              stroke="#c05621" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-school">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
@@ -121,7 +138,7 @@
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
           <div class="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="#c05621" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              stroke="#c05621" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
               class="icon icon-tabler icons-tabler-outline icon-tabler-user-code">
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
@@ -411,7 +428,7 @@
       <div class="about-containers">
         <div class="details-container color-container">
           <div class="article-container-project">
-            <img src="./src/assets/project-1.png" alt="YAKWETU Super App" class="project-img" />
+            <img src="./src/assets/home shot.png" alt="YAKWETU Super App" class="project-img" />
             <div class="project-tech-stack">
               <span>Figma</span>
               <span>UI/UX</span>
@@ -420,37 +437,41 @@
           </div>
           <h2 class="experience-sub-title project-title">YAKWETU Super App</h2>
           <p class="project-description">
-            A comprehensive entertainment content platform featuring movie ticketing, content streaming, and an
-            intuitive user interface.
-            Developed the mobile app using React Native and implemented a complex ticketing system.
+            An content streaming app providing movies and series.
+            Developed the mobile app using React Native and implemented Digital Rights Management (DRM) for content
+            protection.
           </p>
           <div class="key-features">
-            <span>✓ Payment Integration</span>
+            <span>✓ Paystack Integration</span>
             <span>✓ Performance Tracking</span>
-            <span>✓ Custom Design System</span>
+            <span>✓ DRM</span>
           </div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-              <img src="./src/assets/github.png" alt="GitHub" class="btn-icon" />
-              Github
-            </button>
-            <button class="btn btn-color-1 project-btn" onclick="location.href='#'">
-              <img src="./src/assets/link.png" alt="Live Demo" class="btn-icon" />
+            <a class="btn btn-color-1 project-btn" target="_blank"
+              href='https://play.google.com/store/apps/details?id=com.yakwetu.yakwetuapp&pcampaignid=web_share'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-link">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 15l6 -6" />
+                <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+                <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+              </svg>
               Live Demo
-            </button>
+            </a>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container-project">
-            <img src="./src/assets/project-2.png" alt="Audiobooks Platform" class="project-img" />
+            <img src="./src/assets/soundleaf.png" alt="SoundLeaf" class="project-img" />
             <div class="project-tech-stack">
               <span>Django</span>
               <span>PostgreSQL</span>
               <span>Cloudflare R2</span>
             </div>
           </div>
-          <h2 class="experience-sub-title project-title">Audiobooks Platform</h2>
+          <h2 class="experience-sub-title project-title">SoundLeaf</h2>
           <p class="project-description">
             A full-featured audiobooks platform with streaming capabilities, user authentication, and integrated payment
             system.
@@ -458,24 +479,38 @@
           </p>
           <div class="key-features">
             <span>✓ Paystack Integration</span>
-            <span>✓ Streaming Service</span>
-            <span>✓ User Management</span>
+            <span>✓ Audio Streaming</span>
+            <span>✓ User Authentication</span>
           </div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-              <img src="./src/assets/github.png" alt="GitHub" class="btn-icon" />
+            <a class="btn btn-color-2 project-btn" target="_blank"
+              href='https://github.com/gitahievans/soundleaf-frontend'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+              </svg>
               Github
-            </button>
-            <button class="btn btn-color-1 project-btn" onclick="location.href='#'">
-              <img src="./src/assets/link.png" alt="Live Demo" class="btn-icon" />
+            </a>
+            <a class="btn btn-color-1 project-btn" target="_blank" href='#'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-link">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 15l6 -6" />
+                <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+                <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+              </svg>
               Live Demo
-            </button>
+            </a>
           </div>
         </div>
 
         <div class="details-container color-container">
           <div class="article-container-project">
-            <img src="./src/assets/project-3.png" alt="Renters Hub" class="project-img" />
+            <img src="./src/assets/renters-hub.png" alt="Renters Hub" class="project-img" />
             <div class="project-tech-stack">
               <span>Next.js</span>
               <span>Tailwind</span>
@@ -494,14 +529,17 @@
             <span>✓ Responsive Design</span>
           </div>
           <div class="btn-container">
-            <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
-              <img src="./src/assets/github.png" alt="GitHub" class="btn-icon" />
-              Github
-            </button>
-            <button class="btn btn-color-1 project-btn" onclick="location.href='#'">
-              <img src="./src/assets/link.png" alt="Live Demo" class="btn-icon" />
+            <a class="btn btn-color-1 project-btn" target="_blank" href='https://www.rentershub.co.ke/'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-link">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 15l6 -6" />
+                <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+                <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+              </svg>
               Live Demo
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -514,11 +552,28 @@
     <h1 class="title">Contact Me</h1>
     <div class="contact-info-upper-container">
       <div class="contact-info-container">
-        <img src="./src/assets/email.png" alt="Email icon" class="icon contact-icon" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-mail-spark">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M19 22.5a4.75 4.75 0 0 1 3.5 -3.5a4.75 4.75 0 0 1 -3.5 -3.5a4.75 4.75 0 0 1 -3.5 3.5a4.75 4.75 0 0 1 3.5 3.5" />
+          <path d="M11.5 19h-6.5a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v5" />
+          <path d="M3 7l9 6l9 -6" />
+        </svg>
         <p><a href="mailto:evanygk@gmail.com">evanygk@gmail.com</a></p>
       </div>
       <div class="contact-info-container">
-        <img src="./src/assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M8 11v5" />
+          <path d="M8 8v.01" />
+          <path d="M12 16v-5" />
+          <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+          <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+        </svg>
         <p><a href="https://www.linkedin.com/in/evans-gitahi/" target="_blank">LinkedIn</a></p>
       </div>
     </div>
