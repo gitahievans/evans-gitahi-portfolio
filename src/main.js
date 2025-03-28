@@ -16,8 +16,10 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
-document.querySelectorAll(".menu-links a").forEach((link) => {
+document.querySelectorAll(".hamburger-icon").forEach((link) => {
   link.addEventListener("click", (e) => {
+    console.log("clicked");
+
     const targetId = link.getAttribute("href");
     const targetSection = document.querySelector(targetId);
 
