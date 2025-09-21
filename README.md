@@ -1,111 +1,113 @@
-# Evans Gitahi's Portfolio
-
-Welcome to my portfolio website! This site showcases my skills, experience, and projects as a software developer.
+# Evans Gitahi - Front-End Developer | 3 Years Experience
 
 ## Table of Contents
 
 - [About](#about)
 - [Skills](#skills)
-- [Experience](#experience)
+- [Work Experience](#work-experience)
 - [Projects](#projects)
+- [Education](#education)
 - [Contact](#contact)
 
-## About
+📧 [evanygk@gmail.com](mailto:evanygk@gmail.com)  
+📞 +254722739527  
+🔗 [LinkedIn](#) | [GitHub](#) | [Portfolio](#)  
+🌍 Nairobi, Kenya  
 
-Hello, I'm Evans Gitahi, a passionate software developer with expertise in full-stack development. I specialize in building high-performing web applications and have a strong background in both front-end and back-end technologies.
+A front-end developer with expertise in building large-scale, high-performing, user-centric web applications. Proficient in React, TypeScript, Next.js, and React Native, plus strong backend development capabilities using Python and Django. Experienced in writing clean, testable, and maintainable code while optimizing for performance and delivering exceptional user experiences. Strong problem-solving skills, excellent collaboration abilities, and a keen eye for responsive design and accessibility.
 
 ## Skills
 
-### Frontend Development
-- React.js & Next.js
-- TypeScript
+### Front-end Development
+- TypeScript & JavaScript
+- React & Next.js
 - React Native
-- Tailwind CSS
-- UI/UX Design (Figma)
-- Web Animations
+- HTML5 & CSS3
+- Vercel
+- Vite & Webpack
+- REST API Integration
 
-### Backend Development
+### Development Practices
+- Collaborative development
+- Clean, maintainable code
+- Code documentation
+- Cross-functional teamwork
+
+### Back-end Development
 - Python & Django
 - PostgreSQL
-- REST APIs
+- RESTful API development
+
+### DevOps & Infrastructure
+- Docker containerization
+- VPS Setup & Management
+- Cloudflare (R2, DNS)
 - CI/CD
+- Git & GitHub
 
-## Experience
+## Work Experience
 
-### MyMovies Africa™
-- **Role:** Front-end Developer
-- **Duration:** Aug 2023 - Present
-- **Achievements:**
-  - Built a cross-platform mobile app using React Native for entertainment content
-  - Developed complex ticketing platform with payment integrations
-  - Integrated monitoring tools like Sentry and Vercel
-  - Designed UI/UX for YAKWETU super app using Figma
-  - Optimized legacy codebase for better performance
+### Full-stack Developer  
+**YAKWETU™ Online Limited**  
+*08/2023 – Present | Nairobi, Kenya*  
+- Built scalable frontend applications using Next.js and React Native for YAKWETU's entertainment platform, focusing on high-performance user experiences and component-based architecture.  
+- Implemented performance optimization strategies and monitoring tools like Sentry and Vercel to track Core Web Vitals.  
+- Translated UI/UX designs from Figma into responsive, maintainable code, collaborating closely with cross-functional teams including designers and product managers.  
+- Refactored legacy codebase to improve performance and maintainability, ensuring clean and testable code standards.  
+- Worked remotely with cross-cultural team members, demonstrating strong collaboration skills.
 
-### JetBetKe
-- **Role:** Front-end Developer
-- **Duration:** Sept 2023 - Jan 2024
-- **Achievements:**
-  - Developed sports betting platform with Sportsbook and Casino access
-  - Built high-performing web app using TypeScript & React.js
-  - Integrated Redis for optimized performance
-  - Implemented extensive third-party API integrations
-  - Enhanced website performance and SEO
-
-### Rentershub
-- **Role:** Full-Stack Developer
-- **Duration:** May 2023 - Aug 2023
-- **Achievements:**
-  - Built comprehensive house-renting platform using Next.js and Django
-  - Designed and implemented PostgreSQL data models
-  - Implemented client-side routing and state management
-  - Collaborated with product team on feature development
-
-### Mentorlst
-- **Role:** Volunteer Front-end Developer
-- **Duration:** Mar 2023 - Aug 2023
-- **Achievements:**
-  - Refactored codebase to improve maintainability
-  - Implemented precise web designs with attention to detail
-  - Collaborated on high-quality feature delivery
-  - Conducted thorough code reviews
+### Volunteer Front-end Developer  
+**Mentorlst**  
+*03/2023 – 08/2023 | Nairobi, Kenya*  
+- Refactored codebase to eliminate redundancies and improve maintainability and performance.  
+- Implemented responsive web designs with precision, showcasing attention to detail and accessibility standards.  
+- Collaborated with developers, product managers, and designers to deliver high-quality features.  
+- Participated in product development meetings, contributing insights and ideas for scalable solutions.  
+- Conducted thorough code reviews to ensure code quality and adherence to best practices.
 
 ## Projects
 
-### YAKWETU Super App
-- **Description:** An content streaming app providing movies and series. Developed the mobile app using React Native and implemented Digital Rights Management (DRM) for content protection.
-- **Technologies:** Figma, UI/UX, React Native
-- **Features:**
-  - Paystack Integration
-  - Performance Tracking
-  - DRM
-- **Live Demo:** [YAKWETU Super App](https://play.google.com/store/apps/details?id=com.yakwetu.yakwetuapp&pcampaignid=web_share)
+### AuralTales  
+*(Full-Stack Development | Next.js, Django, PostgreSQL, Cloudflare R2, Docker, VPS, Paystack)*  
+- **Frontend & User Experience:** Developed a responsive Next.js web application with seamless audiobook purchasing and listening experience, implementing performance optimization for fast loading times.  
+- **Component Architecture:** Built scalable React components and maintainable TypeScript code for Admin & Author dashboards.  
+- **API Integration:** Integrated REST APIs for secure authentication, payments, and content management.  
+- **Backend Development:** Built secure Django backend with PostgreSQL, implementing RESTful API endpoints.  
+- **Infrastructure:** Configured Docker deployment on VPS with security hardening and CI/CD practices.  
+- **File Storage:** Integrated Cloudflare R2 for secure, high-performance file delivery.  
+- **Payment Integration:** Implemented Paystack API for secure transaction processing.
 
-### SoundLeaf
-- **Description:** A full-featured audiobooks platform with streaming capabilities, user authentication, and integrated payment system. Built with Django backend and comprehensive API architecture.
-- **Technologies:** Django, PostgreSQL, Cloudflare R2
-- **Features:**
-  - Paystack Integration
-  - Audio Streaming
-  - User Authentication
-- **GitHub:** [SoundLeaf Frontend](https://github.com/gitahievans/soundleaf-frontend)
+### Scoreanalyzr  
+- **Description:** Built responsive frontend interface for automated score digitization with React and TypeScript.  
+- **Features:**  
+  - Implemented performance-optimized file upload handling and real-time data visualization.  
+  - Integrated AI-powered insights with Gemini AI for contextual analysis and summaries.  
+  - Created scalable architecture for end-to-end workflow processing.  
+  - Ensured accessibility and responsive design across all device sizes.
 
-### Renters Hub
-- **Description:** A comprehensive house-renting platform built with Next.js and styled with Tailwind CSS and Mantine components. Features modern UI/UX design and seamless user experience.
-- **Technologies:** Next.js, Tailwind, Mantine
-- **Features:**
-  - Property Search
-  - User Dashboard
-  - Responsive Design
-- **Live Demo:** [Renters Hub](https://www.rentershub.co.ke/)
+### SceneIt  
+*Movie Recommendation App*  
+- **Description:** Collects information from users and tracks their interactions within the app then gives movie recommendations based on that.  
+- **Features:**  
+  - API integration.  
+  - Authentication and Authorization using Supabase Auth.  
+  - Built a clean, responsive and user-friendly UI.  
+  - Implemented unit testing.  
+  - Implemented CI/CD using GitHub Actions.
 
-## Contact
+## Education
 
-Feel free to reach out to me via email or connect with me on LinkedIn.
+### Software Engineering  
+**Moringa School**  
+*05/2022 – 11/2022 | Nairobi, Kenya*  
+- Front-end software development  
+- Back-end software development  
 
-- **Email:** [evanygk@gmail.com](mailto:evanygk@gmail.com)
-- **LinkedIn:** [Evans Gitahi](https://www.linkedin.com/in/evans-gitahi/)
+### Bsc. Mechanical And Manufacturing Engineering  
+**Multimedia University Of Kenya**  
+*09/2016 – 12/2021 | Nairobi, Kenya*  
+- Second class (Upper Division)  
 
 ---
 
-Thank you for visiting my portfolio!
+*Evans Gitahi*
