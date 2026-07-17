@@ -7,17 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- add favicon -->
   <link rel="icon" href="./src/assets/me.jpg" />
-  <title>Evans Gitahi</title>
+  <meta name="description"
+    content="Portfolio of Evans Gitahi, a DevOps Engineer and Full-Stack Developer specializing in CI/CD, container orchestration, self-hosted infrastructure, React, Angular, and Django." />
+  <title>Evans Gitahi | DevOps Engineer & Full-Stack Developer</title>
+  <link href="./src/output.css" rel="stylesheet">
   <link rel="stylesheet" href="./src/style.css" />
   <link rel="stylesheet" href="./src/mediaqueries.css" />
-  <link href="./src/output.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav id="desktop-nav" class="nav-container">
+  <nav id="desktop-nav" class="nav-container" aria-label="Primary navigation">
     <div class="logo">
       <span class="logo-text gradient-text">Evans Gitahi</span>
-      <span class="logo-subtitle">Software Developer</span>
+      <span class="logo-subtitle">DevOps & Full-Stack</span>
     </div>
     <div>
       <ul class="nav-links">
@@ -30,18 +32,19 @@
     </div>
   </nav>
 
-  <nav id="hamburger-nav">
+  <nav id="hamburger-nav" aria-label="Mobile navigation">
     <div class="logo">
       <span class="logo-text gradient-text">Evans Gitahi</span>
-      <span class="logo-subtitle">Software Developer</span>
+      <span class="logo-subtitle">DevOps & Full-Stack</span>
     </div>
     <div class="hamburger-menu">
-      <div class="hamburger-icon">
+      <button class="hamburger-icon" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="mobile-menu-links">
         <span></span>
         <span></span>
         <span></span>
-      </div>
-      <ul class="menu-links">
+      </button>
+      <ul class="menu-links" id="mobile-menu-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Skills</a></li>
         <li><a href="#career">Experience</a></li>
@@ -52,26 +55,23 @@
   </nav>
 
 
-  <section id="profile">
-    <!-- <div class="section__pic-container">
-        <img src="./src/assets/profile-pic-2.png" alt="Evans Gitahi profile picture" />
-      </div> -->
-    <div class="section__text">
-      <p class="section__text__p1">Hello, I'm</p>
-      <h1 class="title gradient-text">Evans Gitahi</h1>
-      <p class="section__text__p2">a Software Developer</p>
-      <div class="btn-container">
-        <!-- download the cv from https://drive.google.com/file/d/1kHip1SAihHFrj8TRKnO87RGivzMBokJR/view?usp=sharing -->
+  <section id="profile" data-motion="hero">
+    <div class="section__text" data-motion-group="hero-copy">
+      <p class="section__text__p1" data-motion-item="eyebrow">Hello, I'm</p>
+      <h1 class="title gradient-text" data-motion-item="title">Evans Gitahi</h1>
+      <p class="section__text__p2" data-motion-item="role">DevOps Engineer & Full-Stack Developer</p>
+      <p class="hero-summary" data-motion-item="summary">I build reliable delivery pipelines, containerised infrastructure, and production-ready
+        applications across the stack.</p>
+      <div class="btn-container" data-motion-item="actions">
         <a class="btn btn-color-2"
-          href="https://drive.google.com/file/d/1qZR6MSgcI2lhIJ_upyZcVm7VdwZx2ig_/view?usp=sharing" target="_blank"
-          download>
+          href="https://drive.google.com/uc?export=download&amp;id=1_0FDBlC-A-eiOUE8P6buU1c4s0Y00vEP">
           Download CV
         </a>
         <button class="btn btn-color-1" onclick="location.href='./#contact'">
           Contact Info
         </button>
       </div>
-      <div id="socials-container">
+      <div id="socials-container" data-motion-item="socials">
         <a href="https://www.linkedin.com/in/evans-gitahi/" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -95,14 +95,17 @@
         </a>
       </div>
     </div>
+    <div class="hero-portrait" data-motion-item="portrait" aria-hidden="true">
+      <img src="./src/assets/me.jpg" alt="" />
+    </div>
   </section>
 
-  <section id="about" class="min-h-screen pb-32 bg-orange-50">
+  <section id="about" class="min-h-screen pb-32 bg-orange-50" data-motion="section">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="section__text__p1">Get to Know More</p>
-      <h1 class="title">About Me</h1>
+      <p class="section__text__p1" data-motion-item="eyebrow">Get to Know More</p>
+      <h1 class="title" data-motion-item="heading">About Me</h1>
 
-      <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="grid md:grid-cols-3 gap-8 mb-16" data-motion-group="about-cards">
         <!-- Experience Card -->
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
           <div class="flex items-center justify-center mb-4">
@@ -116,7 +119,7 @@
           </div>
           <h3 class="text-xl font-semibold text-center mb-2">Experience</h3>
           <p class="text-center text-gray-600">
-            Front-end Developer<br />
+            DevOps & Full-Stack<br />
             3+ years
           </p>
         </div>
@@ -154,22 +157,20 @@
           </div>
           <h3 class="text-xl font-semibold text-center mb-2">Expertise</h3>
           <p class="text-center text-gray-600">
-            Full-stack Development<br />
-            UI/UX Design
+            CI/CD & Infrastructure<br />
+            Full-Stack Engineering
           </p>
         </div>
       </div>
 
       <!-- About Text -->
-      <div class="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto">
+      <div class="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto" data-motion-item="about-copy">
         <p class="text-gray-700 leading-relaxed">
-          I am a front-end developer with expertise in building large-scale, high-performing, user-centric
-          web applications. Proficient in React, TypeScript, Next.js, and React Native, plus strong
-          backend development capabilities using Python, Django. Experienced in writing clean,
-          testable, and maintainable code while optimizing for performance and delivering exceptional
-          user experiences. Strong problem-solving skills, excellent collaboration abilities, and a
-          keen eye for responsive design and accessibility. Passionate about community-driven
-          iniatives that promote technological inclusivity.
+          I am a software engineer focused on DevOps, with a strong full-stack development foundation. I design
+          CI/CD pipelines, manage containerised deployments with Docker Swarm, and administer self-hosted
+          environments that engineering teams can operate without friction. I also build production applications
+          with TypeScript, Angular, React, and Next.js on the frontend, and Python and Django on the backend.
+          Understanding how software is built shapes how I design the infrastructure it runs on.
         </p>
       </div>
 
@@ -179,11 +180,11 @@
     </div>
   </section>
 
-  <section id="experience" class="experience-section">
-    <p class="section__text__p1">Explore My</p>
-    <h1 class="title">Skills</h1>
+  <section id="experience" class="experience-section" data-motion="section">
+    <p class="section__text__p1" data-motion-item="eyebrow">Explore My</p>
+    <h1 class="title" data-motion-item="heading">Skills</h1>
     <div class="experience-details-container">
-      <div class="about-containers">
+      <div class="about-containers" data-motion-group="skills">
 
         <!-- Frontend Development -->
         <div class="details-container">
@@ -192,43 +193,43 @@
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>React.js & Next.js</h3>
-                <p>Experienced</p>
+                <h3>Angular, React & Next.js</h3>
+                <p>Web applications</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>TypeScript</h3>
-                <p>Experienced</p>
+                <h3>TypeScript & JavaScript</h3>
+                <p>Core languages</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>React Native</h3>
-                <p>Experienced</p>
+                <p>Cross-platform apps</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Tailwind CSS</h3>
-                <p>Experienced</p>
+                <h3>CSS & SCSS</h3>
+                <p>Responsive interfaces</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>UI/UX Design (Figma)</h3>
-                <p>Advanced</p>
+                <h3>Three.js & React Three Fiber</h3>
+                <p>Interactive experiences</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Web Animations</h3>
-                <p>Intermediate</p>
+                <h3>Unit & Integration Testing</h3>
+                <p>Quality assurance</p>
               </div>
             </article>
           </div>
@@ -242,28 +243,28 @@
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>Python & Django</h3>
-                <p>Experienced</p>
+                <p>Application services</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
                 <h3>PostgreSQL</h3>
-                <p>Experienced</p>
+                <p>Data persistence</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>REST & GraphQL APIs</h3>
-                <p>Advanced</p>
+                <h3>RESTful API Development</h3>
+                <p>Design & integration</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Authentication (JWT, OAuth)</h3>
-                <p>Advanced</p>
+                <h3>RabbitMQ</h3>
+                <p>Async workflows</p>
               </div>
             </article>
           </div>
@@ -271,41 +272,41 @@
 
         <!-- DevOps & Cloud -->
         <div class="details-container">
-          <h2 class="experience-sub-title">DevOps & Cloud</h2>
+          <h2 class="experience-sub-title">DevOps & Infrastructure</h2>
           <div class="article-container">
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Docker & Containers</h3>
-                <p>Experienced</p>
+                <h3>Docker & Docker Swarm</h3>
+                <p>Container orchestration</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>VPS Setup & Configuration</h3>
-                <p>Intermediate</p>
+                <h3>Azure & Proxmox</h3>
+                <p>Cloud & on-premise</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>CI/CD (GitHub Actions, GitLab CI)</h3>
-                <p>Intermediate</p>
+                <h3>GitHub Actions</h3>
+                <p>CI/CD automation</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Cloudflare R2 & S3 Storage</h3>
-                <p>Experienced</p>
+                <h3>Nginx & Shell Scripting</h3>
+                <p>Operations & automation</p>
               </div>
             </article>
             <article>
               <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
               <div>
-                <h3>Domain & DNS Management</h3>
-                <p>Intermediate</p>
+                <h3>Self-Hosted OSS</h3>
+                <p>Gitea, Harbor, Wiki.js, Portainer</p>
               </div>
             </article>
           </div>
@@ -318,102 +319,71 @@
 
 
   <!-- PROFESSIONAL eXPERIENCE  -->
-  <section id="career" class="career-section">
+  <section id="career" class="career-section" data-motion="section">
     <div class="section-background"></div>
-    <p class="section__text__p1">Discover My</p>
-    <h1 class="title">Professional Journey</h1>
+    <p class="section__text__p1" data-motion-item="eyebrow">Discover My</p>
+    <h1 class="title" data-motion-item="heading">Professional Journey</h1>
 
-    <div class="experience-stats">
+    <div class="experience-stats" data-motion-group="stats">
       <div class="stat-item">
         <span class="stat-number">3+</span>
         <span class="stat-label">Years Experience</span>
       </div>
-      <!-- <div class="stat-item">
+      <div class="stat-item">
         <span class="stat-number">10+</span>
-        <span class="stat-label">Projects Completed</span>
-      </div> -->
-      <!-- <div class="stat-item">
-        <span class="stat-number">3+</span>
-        <span class="stat-label">Companies Worked</span>
-      </div> -->
+        <span class="stat-label">Servers Automated</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">85%</span>
+        <span class="stat-label">Less Manual Deployment</span>
+      </div>
     </div>
 
-    <div class="timeline-container">
-      <div class="timeline-year">2024</div>
-      <div class="timeline-card current">
+    <div class="timeline-container" data-motion-group="timeline">
+      <div class="timeline-year">2025 - 2026</div>
+      <div class="timeline-card">
         <div class="timeline-header">
           <div class="company-logo">
-            <div class="logo-placeholder">MA</div>
+            <div class="logo-placeholder">C</div>
           </div>
           <div class="header-content">
-            <span class="date">Aug 2023 - Present</span>
+            <span class="date">2025 - Jul 2026</span>
             <div class="company-badge">
-              <span class="company">MyMovies Africa™</span>
-              <span class="role">Front-end Developer</span>
+              <span class="company">Cognativ</span>
+              <span class="role">DevOps Engineer &middot; USA, Remote</span>
             </div>
           </div>
         </div>
         <div class="timeline-content">
           <div class="content-body">
             <ul class="achievements">
-              <li>Building a cross-platform mobile app using React Native for entertainment content</li>
-              <li>Developed complex ticketing platform with payment integrations</li>
-              <li>Integrated monitoring tools like Sentry and Vercel</li>
-              <li>Designed UI/UX for YAKWETU super app using Figma</li>
-              <li>Optimized legacy codebase for better performance</li>
+              <li>Built GitHub Actions pipelines on self-hosted runners, reducing manual deployment effort by about 85% across 10+ servers</li>
+              <li>Built self-service platforms for real-time dev and QA visibility, cutting shipping time by 50%</li>
+              <li>Implemented secrets and access management with Docker secrets, Azure Key Vault, environment-based configuration, and SSH keys</li>
+              <li>Deployed and managed Docker Swarm clusters and standardised containerisation practices</li>
+              <li>Provisioned Proxmox virtual machines and multi-zone Azure infrastructure</li>
             </ul>
           </div>
           <div class="tech-stack">
-            <span>React Native</span>
-            <span>Figma</span>
-            <span>Sentry</span>
-            <span>Vercel</span>
+            <span>Azure</span>
+            <span>Docker Swarm</span>
+            <span>GitHub Actions</span>
+            <span>Proxmox</span>
+            <span>Azure Key Vault</span>
           </div>
         </div>
       </div>
 
-      <div class="timeline-year">2023</div>
-      <!-- <div class="timeline-card">
+      <div class="timeline-year">2024 - Present</div>
+      <div class="timeline-card current">
         <div class="timeline-header">
           <div class="company-logo">
-            <div class="logo-placeholder">JB</div>
+            <div class="logo-placeholder">T</div>
           </div>
           <div class="header-content">
-            <span class="date">Sept 2023 - Jan 2024</span>
+            <span class="date">Jan 2024 - Present</span>
             <div class="company-badge">
-              <span class="company">JetBetKe</span>
-              <span class="role">Front-end Developer</span>
-            </div>
-          </div>
-        </div>
-        <div class="timeline-content">
-          <div class="content-body">
-            <ul class="achievements">
-              <li>Developed sports betting platform with Sportsbook and Casino access</li>
-              <li>Built high-performing web app using TypeScript & React.js</li>
-              <li>Integrated Redis for optimized performance</li>
-              <li>Implemented extensive third-party API integrations</li>
-              <li>Enhanced website performance and SEO</li>
-            </ul>
-          </div>
-          <div class="tech-stack">
-            <span>TypeScript</span>
-            <span>React.js</span>
-            <span>Redis</span>
-            <span>REST APIs</span>
-          </div>
-        </div>
-      </div> -->
-      <!-- 
-      <div class="timeline-card">
-        <div class="timeline-header">
-          <div class="company-logo">
-            <div class="logo-placeholder">RH</div>
-          </div>
-          <div class="header-content">
-            <span class="date">May 2023 - Aug 2023</span>
-            <div class="company-badge">
-              <span class="company">Rentershub</span>
+              <span class="company">Techridian</span>
               <span class="role">Full-Stack Developer</span>
             </div>
           </div>
@@ -421,46 +391,51 @@
         <div class="timeline-content">
           <div class="content-body">
             <ul class="achievements">
-              <li>Built comprehensive house-renting platform using Next.js and Django</li>
-              <li>Designed and implemented PostgreSQL data models</li>
-              <li>Implemented client-side routing and state management</li>
-              <li>Collaborated with product team on feature development</li>
+              <li>Build Angular and TypeScript frontends with Django, Python, PostgreSQL, and RabbitMQ backends for clients across East Africa</li>
+              <li>Translate Figma designs into pixel-accurate interfaces using custom responsive CSS and SCSS</li>
+              <li>Design REST APIs with clear conventions for versioning, errors, authentication, and permissions</li>
+              <li>Build asynchronous workflows for background tasks and notifications using RabbitMQ</li>
+              <li>Own Docker infrastructure, CI/CD pipelines, and staging and production environments end to end</li>
             </ul>
           </div>
           <div class="tech-stack">
-            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Angular</span>
             <span>Django</span>
             <span>PostgreSQL</span>
+            <span>RabbitMQ</span>
+            <span>Docker</span>
           </div>
         </div>
-      </div> -->
+      </div>
 
+      <div class="timeline-year">2023 - 2025</div>
       <div class="timeline-card">
         <div class="timeline-header">
           <div class="company-logo">
-            <div class="logo-placeholder">M</div>
+            <div class="logo-placeholder">Y</div>
           </div>
           <div class="header-content">
-            <span class="date">Mar 2023 - Aug 2023</span>
+            <span class="date">Aug 2023 - Nov 2025</span>
             <div class="company-badge">
-              <span class="company">Mentorlst</span>
-              <span class="role">Volunteer Front-end Developer</span>
+              <span class="company">YAKWETU&trade; Online Limited</span>
+              <span class="role">Front-end Developer &middot; Nairobi, Kenya</span>
             </div>
           </div>
         </div>
         <div class="timeline-content">
           <div class="content-body">
             <ul class="achievements">
-              <li>Refactored codebase to improve maintainability</li>
-              <li>Implemented precise web designs with attention to detail</li>
-              <li>Collaborated on high-quality feature delivery</li>
-              <li>Conducted thorough code reviews</li>
+              <li>Built scalable frontend applications using Next.js and React Native for YAKWETU's entertainment platform</li>
+              <li>Led development of the MyMovies Africa mini-app on the M-PESA App</li>
+              <li>Integrated Sentry and Vercel monitoring to track Core Web Vitals and production errors</li>
             </ul>
           </div>
           <div class="tech-stack">
-            <span>React.js</span>
-            <span>TypeScript</span>
-            <span>CSS</span>
+            <span>Next.js</span>
+            <span>React Native</span>
+            <span>Sentry</span>
+            <span>Vercel</span>
           </div>
         </div>
       </div>
@@ -473,11 +448,11 @@
 
   <!-- PROFESSIONAL eXPERIENCE -->
 
-  <section id="projects" class="projects-section">
-    <p class="section__text__p1">Browse My Recent</p>
-    <h1 class="title">Projects</h1>
+  <section id="projects" class="projects-section" data-motion="section">
+    <p class="section__text__p1" data-motion-item="eyebrow">Browse My Recent</p>
+    <h1 class="title" data-motion-item="heading">Projects</h1>
     <div class="experience-details-container">
-      <div class="about-containers">
+      <div class="about-containers" data-motion-group="projects">
         <div class="details-container color-container">
           <div class="article-container-project">
             <img src="./src/assets/soundleaf.png" alt="SoundLeaf" class="project-img" />
@@ -692,15 +667,15 @@
           </div>
         </div> -->
 
-        <!-- </div> -->
       </div>
+    </div>
       <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
   </section>
 
-  <section id="contact">
-    <p class="section__text__p1">Get in Touch</p>
-    <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
+  <section id="contact" data-motion="section">
+    <p class="section__text__p1" data-motion-item="eyebrow">Get in Touch</p>
+    <h1 class="title" data-motion-item="heading">Contact Me</h1>
+    <div class="contact-info-upper-container" data-motion-group="contact-options">
       <div class="contact-info-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
@@ -741,7 +716,7 @@
         </ul>
       </div>
     </nav>
-    <p>Copyright &#169; 2025 Evans Gitahi. All Rights Reserved.</p>
+    <p>Copyright &#169; 2026 Evans Gitahi. All Rights Reserved.</p>
   </footer>
   <script src="./src/main.js" type="module"></script>
 </body>
