@@ -508,13 +508,13 @@ section {
 .btn-color-1 {
   background: var(--gold);
   background-image: linear-gradient(var(--bark), var(--bark));
-  color: var(--obsidian);
+  color: var(--ivory);
 }
 
 .btn-color-2 {
   background: transparent;
   background-image: linear-gradient(var(--bark), var(--bark));
-  color: var(--gold);
+  color: var(--ivory);
 }
 
 .btn-color-1:hover,
@@ -1133,7 +1133,7 @@ article p {
 
 #projects .btn-color-2 {
   border-color: var(--obsidian);
-  color: var(--obsidian);
+  color: var(--ivory);
 }
 
 #projects .btn-color-2:hover,
