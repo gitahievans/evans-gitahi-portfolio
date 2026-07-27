@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../src/assets/me.jpg" />
+  <meta name="description"
+    content="SceneIt engineering case study by Evans Gitahi: server-side API boundaries, deterministic recommendation planning, caching, authentication, and a production-hardening roadmap." />
+  <title>SceneIt Case Study | Evans Gitahi</title>
+  <link href="../src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/style.css" />
+  <link rel="stylesheet" href="../src/mediaqueries.css" />
+</head>
+
+<body class="case-study-page">
+  <nav id="desktop-nav" class="nav-container" aria-label="Primary navigation">
+    <a class="logo" href="../index.html#profile">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Full-Stack & DevOps</span>
+    </a>
+    <div>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Skills</a></li>
+        <li><a href="../index.html#career">Experience</a></li>
+        <li><a href="../index.html#projects" aria-current="true">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav" aria-label="Mobile navigation">
+    <a class="logo" href="../index.html#profile">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Full-Stack & DevOps</span>
+    </a>
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="mobile-menu-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu-links" id="mobile-menu-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Skills</a></li>
+        <li><a href="../index.html#career">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case-study-main">
+    <section class="case-study-hero">
+      <div class="case-study-hero-inner">
+        <div>
+          <p class="case-study-eyebrow">Product architecture case study</p>
+          <h1 class="case-study-title">SceneIt</h1>
+          <p class="case-study-lede">
+            I turned several volatile external services into one coherent discovery experience, with explicit
+            boundaries for secrets, caching, personalization, and AI-generated answers.
+          </p>
+          <div class="case-study-meta">
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Role</span>
+              <span class="case-study-meta-value">Product architecture and full-stack implementation</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Stack</span>
+              <span class="case-study-meta-value">Next.js, React, TypeScript, Supabase, TMDB, TanStack Query</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Core constraint</span>
+              <span class="case-study-meta-value">Useful public discovery without exposing provider credentials</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Maturity</span>
+              <span class="case-study-meta-value">Working product prototype with a defined hardening path</span>
+            </div>
+          </div>
+          <div class="case-study-actions">
+            <a class="btn btn-color-1" href="https://seen-it-aymo.vercel.app/" target="_blank"
+              rel="noopener noreferrer" referrerpolicy="no-referrer">Live Demo</a>
+            <a class="btn btn-color-2" href="https://github.com/gitahievans/SceneIt" target="_blank"
+              rel="noopener noreferrer">Github</a>
+          </div>
+        </div>
+        <figure class="case-study-image">
+          <img src="../src/assets/sceneit.png" alt="SceneIt movie recommendation app interface" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="case-study-content">
+      <section class="case-study-section case-study-intro">
+        <h2>Engineering brief</h2>
+        <div>
+          <p class="case-study-callout">
+            SceneIt explores a practical architecture question: how should a product combine public catalog data,
+            authenticated preferences, natural-language discovery, and generative explanations without coupling the UI
+            directly to every provider?
+          </p>
+          <div class="case-study-facts" aria-label="Project facts">
+            <div><strong>Ownership</strong><span>Architecture, interface, integrations, and testing</span></div>
+            <div><strong>Surfaces</strong><span>Public discovery, protected personalization, AI assistant</span></div>
+            <div><strong>Quality focus</strong><span>Typed boundaries, cache policy, loading and failure states</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>System boundary</h2>
+        <div>
+          <p>
+            The browser talks to a stable application API rather than TMDB or Gemini directly. Next.js route handlers
+            keep credentials server-side, allow-list upstream query parameters, normalize errors, and apply a 30-minute
+            revalidation policy. Supabase is isolated behind SSR-aware clients and session middleware.
+          </p>
+          <ol class="architecture-flow" aria-label="SceneIt request flow">
+            <li><span>01</span><strong>React experience</strong><small>Browse, search, filters, favorites, assistant</small></li>
+            <li><span>02</span><strong>Next.js boundary</strong><small>Validation, planning, normalization, secret custody</small></li>
+            <li><span>03</span><strong>TMDB and Gemini</strong><small>Catalog metadata and grounded synthesis</small></li>
+            <li><span>04</span><strong>Supabase</strong><small>Sessions, interests, and interaction history</small></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Critical decisions</h2>
+        <div class="decision-list">
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 01 / Integration</p>
+            <h3>Build an anti-corruption layer around TMDB</h3>
+            <p>All catalog calls pass through typed server utilities and application-owned routes. Discover requests forward only known filters, and upstream failures become consistent API responses.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> credentials stay private, provider details do not leak across UI components, and the integration can evolve in one place.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 02 / Recommendation quality</p>
+            <h3>Use a deterministic plan before generative output</h3>
+            <p>Natural language is parsed into explicit genres, years, rating, runtime, provider, region, and mood constraints. Results are fetched, enriched, filtered again, and returned with the applied plan visible to the user.</p>
+            <p class="decision-impact"><strong>Tradeoff:</strong> narrower language coverage than an unconstrained agent, but predictable recommendations that can be debugged and tested.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 03 / AI safety</p>
+            <h3>Ground explanations in retrieved metadata and degrade gracefully</h3>
+            <p>Recap requests first resolve the title and build context from TMDB. Gemini receives that source text with an instruction not to invent missing detail. If the model or key is unavailable, the route returns the source summary.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> the useful path survives a model outage, and generated answers have an explicit evidence boundary.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 04 / Product access</p>
+            <h3>Keep discovery public and personalization authenticated</h3>
+            <p>Core browsing and detail routes work without an account. Middleware refreshes sessions and protects profile, favorites, and onboarding surfaces, preserving a low-friction evaluation path.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> authentication supports the product instead of becoming a gate in front of its primary value.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Performance reasoning</h2>
+        <div class="case-study-grid case-study-grid-three">
+          <article class="case-study-panel">
+            <p class="panel-number">01</p><h3>Layered caching</h3>
+            <p>Next.js revalidates TMDB responses every 30 minutes, while TanStack Query deduplicates client requests and manages loading, error, and stale states.</p>
+          </article>
+          <article class="case-study-panel">
+            <p class="panel-number">02</p><h3>Adaptive query cost</h3>
+            <p>Broad discovery reads one result page. Narrow prompts search deeper, then enforce constraints locally. The extra calls are spent only where precision needs them.</p>
+          </article>
+          <article class="case-study-panel">
+            <p class="panel-number">03</p><h3>Concurrent enrichment</h3>
+            <p>Runtime and provider lookups run concurrently where possible, and optional enrichment failures degrade individual results rather than failing the complete response.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Production lens</h2>
+        <div>
+          <div class="readiness-table" role="table" aria-label="SceneIt production readiness">
+            <div class="readiness-row readiness-head" role="row"><span>Concern</span><span>Current evidence</span><span>Next production step</span></div>
+            <div class="readiness-row" role="row"><strong>Secrets</strong><span>TMDB and Gemini calls are server-side</span><span class="status-done">Sound boundary</span></div>
+            <div class="readiness-row" role="row"><strong>Resilience</strong><span>Cache policy, normalized failures, partial enrichment, AI fallback</span><span class="status-watch">Add timeouts and retry budgets</span></div>
+            <div class="readiness-row" role="row"><strong>Authorization</strong><span>Session middleware protects account pages; interests write verifies identity</span><span class="status-watch">Derive identity on every interaction API</span></div>
+            <div class="readiness-row" role="row"><strong>Data integrity</strong><span>Supabase persists preferences and interactions</span><span class="status-watch">Enforce RLS, unique constraints, atomic upserts</span></div>
+            <div class="readiness-row" role="row"><strong>Quality</strong><span>Focused UI tests cover loading, failure, pagination, and favorite behavior</span><span class="status-watch">Add route contracts and planner tests</span></div>
+            <div class="readiness-row" role="row"><strong>Operations</strong><span>Deployable Next.js application</span><span class="status-watch">Add telemetry, rate limits, SLOs, and runbooks</span></div>
+          </div>
+          <p class="case-study-note">
+            I intentionally present SceneIt as a product prototype, not a production system. The senior-level work is
+            visible in the boundaries already chosen and in identifying the controls required before serving real users
+            at scale.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>What this demonstrates</h2>
+        <div>
+          <ul class="case-study-checklist">
+            <li>Containing third-party volatility behind typed, application-owned interfaces.</li>
+            <li>Choosing deterministic, inspectable planning for recommendation correctness and using generation only where it adds value.</li>
+            <li>Reasoning about cache freshness, fan-out cost, graceful degradation, and public versus authenticated product surfaces.</li>
+            <li>Auditing a working prototype honestly and turning gaps into a prioritized production-hardening plan.</li>
+          </ul>
+          <div class="case-study-tags" aria-label="Technical competencies">
+            <span>Next.js App Router</span><span>TypeScript</span><span>API design</span><span>Supabase SSR</span>
+            <span>TanStack Query</span><span>TMDB</span><span>Grounded AI</span><span>Cache strategy</span>
+            <span>Testing Library</span><span>Production assessment</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <section class="case-study-nav" aria-label="Project navigation">
+    <div class="case-study-nav-inner">
+      <a class="case-study-nav-link" href="../index.html#projects">Back to Projects</a>
+      <a class="case-study-nav-link" href="./ladyshelf.html">Next Case Study: LadyShelf</a>
+    </div>
+  </section>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+
+</html>

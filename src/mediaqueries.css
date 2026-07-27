@@ -148,6 +148,59 @@
     max-width: 680px;
   }
 
+  .case-study-hero-inner,
+  .case-study-section {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-hero-inner {
+    align-content: center;
+  }
+
+  .case-study-image {
+    max-width: 720px;
+  }
+
+  .case-study-facts,
+  .case-study-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-facts div + div {
+    border-top: 1px solid var(--case-line);
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .architecture-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .architecture-flow li:nth-child(3) {
+    border-left: 0;
+  }
+
+  .architecture-flow li:nth-child(n + 3) {
+    border-top: 1px solid var(--case-line);
+  }
+
+  .decision-item {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+
+  .decision-item > p:not(.decision-kicker) {
+    grid-column: 2;
+  }
+
+  .decision-item .decision-impact {
+    grid-column: 2;
+  }
+
+  .case-study-content {
+    padding-top: 72px;
+    padding-bottom: 80px;
+  }
+
   .arrow {
     display: none;
   }
@@ -231,6 +284,75 @@
   #projects .color-container > .btn-container {
     margin-right: 20px;
     margin-left: 20px;
+  }
+
+  .case-study-hero {
+    padding: calc(var(--nav-height) + 40px) 20px 56px;
+  }
+
+  .case-study-title {
+    font-size: 56px;
+  }
+
+  .case-study-meta,
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-flow,
+  .decision-item,
+  .readiness-row {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-flow li + li,
+  .architecture-flow li:nth-child(3) {
+    border-top: 1px solid var(--case-line);
+    border-left: 0;
+  }
+
+  .architecture-flow span {
+    margin-bottom: 14px;
+  }
+
+  .decision-item > p:not(.decision-kicker),
+  .decision-item .decision-impact {
+    grid-column: 1;
+  }
+
+  .decision-item .decision-impact {
+    margin-top: 0;
+  }
+
+  .readiness-head {
+    display: none;
+  }
+
+  .readiness-row {
+    gap: 5px;
+    padding-block: 20px;
+  }
+
+  .case-study-actions .btn {
+    width: 100%;
+  }
+
+  .case-study-section {
+    padding-block: 40px;
+  }
+
+  .case-study-section h2 {
+    font-size: 34px;
+  }
+
+  .case-study-section p,
+  .case-study-section li {
+    font-size: 15px;
+  }
+
+  .case-study-nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .contact-info-upper-container,

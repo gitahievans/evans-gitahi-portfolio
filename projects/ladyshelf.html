@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../src/assets/me.jpg" />
+  <meta name="description"
+    content="LadyShelf engineering case study by Evans Gitahi: transactional commerce, payment reliability, authorization, production deployment, and operational design." />
+  <title>LadyShelf Case Study | Evans Gitahi</title>
+  <link href="../src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/style.css" />
+  <link rel="stylesheet" href="../src/mediaqueries.css" />
+</head>
+
+<body class="case-study-page">
+  <nav id="desktop-nav" class="nav-container" aria-label="Primary navigation">
+    <a class="logo" href="../index.html#profile">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Full-Stack & DevOps</span>
+    </a>
+    <div>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Skills</a></li>
+        <li><a href="../index.html#career">Experience</a></li>
+        <li><a href="../index.html#projects" aria-current="true">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav" aria-label="Mobile navigation">
+    <a class="logo" href="../index.html#profile">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Full-Stack & DevOps</span>
+    </a>
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="mobile-menu-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu-links" id="mobile-menu-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Skills</a></li>
+        <li><a href="../index.html#career">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case-study-main">
+    <section class="case-study-hero">
+      <div class="case-study-hero-inner">
+        <div>
+          <p class="case-study-eyebrow">Production commerce case study</p>
+          <h1 class="case-study-title">LadyShelf</h1>
+          <p class="case-study-lede">
+            I designed a commerce system that treats inventory, money, identity, and operations as correctness
+            problems, not just screens to build.
+          </p>
+          <div class="case-study-meta">
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Role</span>
+              <span class="case-study-meta-value">System design, full-stack delivery, and production operations</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Stack</span>
+              <span class="case-study-meta-value">Next.js, TypeScript, Django REST Framework, Supabase, PostgreSQL</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Core constraint</span>
+              <span class="case-study-meta-value">Never trust browser prices, stock, identity, or payment state</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Delivery state</span>
+              <span class="case-study-meta-value">Live backend; final auth and owner workflow verification tracked openly</span>
+            </div>
+          </div>
+          <div class="case-study-actions">
+            <a class="btn btn-color-1" href="https://ladyshelf.site" target="_blank" rel="noopener noreferrer"
+              referrerpolicy="no-referrer">Live Demo</a>
+            <a class="btn btn-color-2" href="https://github.com/gitahievans/ladyshelf" target="_blank"
+              rel="noopener noreferrer">Github</a>
+          </div>
+        </div>
+        <figure class="case-study-image">
+          <img src="../src/assets/ladyshelf.png" alt="LadyShelf fashion commerce storefront interface" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="case-study-content">
+      <section class="case-study-section case-study-intro">
+        <h2>Engineering brief</h2>
+        <div>
+          <p class="case-study-callout">
+            The goal was not merely to complete a checkout. It was to preserve business invariants when two customers
+            want the last item, a payment callback arrives twice, an external provider fails, or an operator needs to
+            understand and recover the system.
+          </p>
+          <div class="case-study-facts" aria-label="Project facts">
+            <div><strong>Ownership</strong><span>Product architecture through deployment</span></div>
+            <div><strong>Surfaces</strong><span>Customer storefront, REST API, staff portal, operations</span></div>
+            <div><strong>Evidence</strong><span>111 backend test methods, migrations, runbooks, health checks</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>System boundary</h2>
+        <div>
+          <p>
+            I split the product by responsibility. Next.js owns presentation and interaction; Django owns commerce
+            rules; PostgreSQL owns durable state; Supabase supplies identity; payment and image providers remain
+            replaceable external dependencies. That boundary prevents client state from becoming business truth.
+          </p>
+          <ol class="architecture-flow" aria-label="LadyShelf request flow">
+            <li><span>01</span><strong>Next.js storefront</strong><small>Browse, cart, account, checkout, staff UI</small></li>
+            <li><span>02</span><strong>Django REST API</strong><small>Authorization, validation, orchestration</small></li>
+            <li><span>03</span><strong>PostgreSQL</strong><small>Catalog, stock, orders, payments, audit state</small></li>
+            <li><span>04</span><strong>External services</strong><small>Supabase identity, SasaPay, email, image generation</small></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Critical decisions</h2>
+        <div class="decision-list">
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 01 / Consistency</p>
+            <h3>Re-price and reserve stock inside one database transaction</h3>
+            <p>The API rebuilds every quote from current product and delivery data. During order creation it locks variants, checks availability again, creates the order snapshot, and decrements stock atomically.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> browser prices cannot be forged, and concurrent checkouts cannot silently oversell the same variant.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 02 / Payments</p>
+            <h3>Treat payment as a state machine, not a redirect</h3>
+            <p>Checkout initiation reuses an existing pending transaction. Callbacks lock the payment record, verify successful transactions with the provider, tolerate duplicate delivery, and flag late payment after an order has expired.</p>
+            <p class="decision-impact"><strong>Tradeoff:</strong> more domain state and tests, in exchange for traceable outcomes when networks retry or reorder events.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 03 / Identity</p>
+            <h3>Separate authentication from the commerce profile</h3>
+            <p>Supabase owns sessions and identity. Django validates signed tokens and hydrates a local customer keyed by the stable subject claim, while retaining ownership of addresses, orders, permissions, and business history.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> the identity provider can evolve without pushing commerce rules into authentication metadata.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 04 / Operations</p>
+            <h3>Model staff work as a first-class product surface</h3>
+            <p>Owner and attendant roles have explicit permissions. The custom portal covers orders, manual payments, inventory, customers, staff, settings, and image review instead of making operators manipulate raw records.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> operational usability and least privilege are part of system correctness.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Failure design</h2>
+        <div class="case-study-grid case-study-grid-three">
+          <article class="case-study-panel">
+            <p class="panel-number">01</p><h3>Commit before side effects</h3>
+            <p>Emails and receipts run after a successful database commit, so a notification failure cannot roll back a valid order or announce one that never persisted.</p>
+          </article>
+          <article class="case-study-panel">
+            <p class="panel-number">02</p><h3>Recover abandoned inventory</h3>
+            <p>A scheduled command locks expired unpaid orders, cancels them, restores stock, and records the transition for operators.</p>
+          </article>
+          <article class="case-study-panel">
+            <p class="panel-number">03</p><h3>Make AI work reviewable</h3>
+            <p>Image jobs use explicit states, row-level claiming, bounded exponential backoff, quota-aware retry timing, human approval, and rollback of partially copied assets.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Production posture</h2>
+        <div>
+          <div class="readiness-table" role="table" aria-label="LadyShelf production readiness">
+            <div class="readiness-row readiness-head" role="row"><span>Concern</span><span>Implemented evidence</span><span>Boundary</span></div>
+            <div class="readiness-row" role="row"><strong>Runtime</strong><span>Gunicorn container, read-only filesystem, dropped capabilities, CPU and memory limits</span><span class="status-done">Deployed</span></div>
+            <div class="readiness-row" role="row"><strong>Network</strong><span>Cloudflare to Nginx to loopback-only API; database has no host port</span><span class="status-done">Deployed</span></div>
+            <div class="readiness-row" role="row"><strong>Release</strong><span>Immutable image reference, explicit migrations and roles, health-checked release script</span><span class="status-done">Repeatable</span></div>
+            <div class="readiness-row" role="row"><strong>Recovery</strong><span>Restricted PostgreSQL backups, retention, timers, structured logs, error email</span><span class="status-watch">Off-site restore drill pending</span></div>
+            <div class="readiness-row" role="row"><strong>Launch</strong><span>Deployment handoff records revision, image digest, infrastructure, evidence, and risks</span><span class="status-watch">Auth and owner-flow verification open</span></div>
+          </div>
+          <p class="case-study-note">
+            Senior engineering includes naming incomplete work. The deployment is real, but I do not describe it as
+            fully launch-ready while Supabase token verification, owner-facing browser checks, and off-site recovery
+            evidence remain tracked.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>What this demonstrates</h2>
+        <div>
+          <ul class="case-study-checklist">
+            <li>Translating product flows into explicit domain invariants and transactional boundaries.</li>
+            <li>Designing for concurrency, retries, partial failure, authorization, and operational recovery.</li>
+            <li>Making deployment state reproducible and reviewable through scripts, health checks, environment contracts, and handoff documentation.</li>
+            <li>Balancing a personal-project budget with production-minded controls, while documenting the risks that remain.</li>
+          </ul>
+          <div class="case-study-tags" aria-label="Technical competencies">
+            <span>System design</span><span>Transactional commerce</span><span>Django REST Framework</span>
+            <span>Next.js</span><span>PostgreSQL</span><span>Payment workflows</span><span>RBAC</span>
+            <span>Docker hardening</span><span>Observability</span><span>Operational runbooks</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <section class="case-study-nav" aria-label="Project navigation">
+    <div class="case-study-nav-inner">
+      <a class="case-study-nav-link" href="../index.html#projects">Back to Projects</a>
+      <a class="case-study-nav-link" href="./sceneit.html">Previous Case Study: SceneIt</a>
+    </div>
+  </section>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+
+</html>
