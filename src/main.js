@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function prepareMotion() {
     setMotionItems("#about [data-motion-group='about-cards'] > div", "about-card");
     setMotionItems("#experience [data-motion-group='skills'] > .details-container", "skill-group");
-    setMotionItems("#experience article", "skill-item");
+    setMotionItems("#experience .skill-rows > div", "skill-item");
     setMotionItems("#career .stat-item", "stat");
     setMotionItems("#career .timeline-year", "timeline-year");
     setMotionItems("#career .timeline-card", "timeline-card");

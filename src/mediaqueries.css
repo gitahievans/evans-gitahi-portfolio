@@ -83,7 +83,7 @@
     padding-block: 76px;
   }
 
-  #about .grid,
+  #about .about-layout,
   #experience .about-containers,
   #projects .about-containers {
     grid-template-columns: 1fr;
@@ -93,8 +93,8 @@
     grid-column: auto;
   }
 
-  #about .grid > div {
-    min-height: 190px;
+  .about-principles {
+    margin-top: 48px;
   }
 
   .experience-stats {
@@ -240,17 +240,42 @@
     margin-top: 22px;
   }
 
-  #about .grid > div,
   #experience .details-container {
     padding: 26px 22px;
   }
 
-  #about .max-w-3xl {
-    padding-left: 20px;
+  .about-lead {
+    font-size: 28px;
   }
 
-  #about .max-w-3xl p {
-    font-size: 21px;
+  .about-statement > p + p {
+    padding-left: 18px;
+  }
+
+  .about-principles {
+    grid-template-columns: 1fr;
+  }
+
+  .about-principles > div {
+    padding: 22px 0;
+  }
+
+  .about-principles > div + div {
+    border-top: 1px solid var(--border-warm);
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .about-principles span {
+    margin-bottom: 12px;
+  }
+
+  .skill-summary {
+    min-height: 0;
+  }
+
+  .skill-rows > div {
+    grid-template-columns: 76px minmax(0, 1fr);
   }
 
   .experience-stats {

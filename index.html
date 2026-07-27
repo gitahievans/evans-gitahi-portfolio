@@ -63,8 +63,7 @@
       <p class="hero-summary" data-motion-item="summary">I build production-ready applications across the stack, then
         design the delivery pipelines and containerised infrastructure that keep them reliable.</p>
       <div class="btn-container" data-motion-item="actions">
-        <a class="btn btn-color-2"
-          href="https://drive.google.com/file/d/15fxINHGAQScArRPK_dxq0HKSrsaAFwdM/view?usp=sharing">
+        <a class="btn btn-color-2" href="./Evans_Gitahi_Resume.pdf" download="Evans_Gitahi_Resume.pdf">
           Download CV
         </a>
         <button class="btn btn-color-1" onclick="location.href='./#contact'">
@@ -100,217 +99,89 @@
     </div>
   </section>
 
-  <section id="about" class="min-h-screen pb-32 bg-orange-50" data-motion="section">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <p class="section__text__p1" data-motion-item="eyebrow">Get to Know More</p>
+  <section id="about" data-motion="section">
+    <div>
+      <p class="section__text__p1" data-motion-item="eyebrow">Engineering Across Boundaries</p>
       <h1 class="title" data-motion-item="heading">About Me</h1>
 
-      <div class="grid md:grid-cols-3 gap-8 mb-16" data-motion-group="about-cards">
-        <!-- Experience Card -->
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-          <div class="flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="#c05621" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase-2">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9z" />
-              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-semibold text-center mb-2">Experience</h3>
-          <p class="text-center text-gray-600">
-            Full-Stack & DevOps<br />
-            3+ years
+      <div class="about-layout" data-motion-group="about-cards">
+        <div class="about-statement">
+          <p class="about-lead">
+            I am a software engineer who works across product development, backend systems, and the infrastructure
+            that carries them into production.
+          </p>
+          <p>
+            I build TypeScript, Angular, React, and Next.js interfaces; design Python, Django, C# and .NET services;
+            and translate business requirements into APIs, data models, asynchronous workflows, and deployable systems.
+            That full lifecycle view helps me make decisions with operability, failure, and maintainability in mind.
           </p>
         </div>
 
-        <!-- Education Card -->
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-          <div class="flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="#c05621" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-school">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
-              <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
-            </svg>
+        <div class="about-evidence" aria-label="Background and credentials">
+          <div class="about-evidence-row">
+            <span>Engineering focus</span>
+            <strong>Backend, API engineering and microservices</strong>
           </div>
-          <h3 class="text-xl font-semibold text-center mb-2">Education</h3>
-          <p class="text-center text-gray-600">
-            Software Engineering Certificate <br />
-            B.Sc. Mechanical Engineering
-          </p>
-        </div>
-
-        <!-- Expertise Card -->
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
-          <div class="flex items-center justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="#c05621" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-user-code">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
-              <path d="M6 21v-2a4 4 0 0 1 4 -4h3.5" />
-              <path d="M20 21l2 -2l-2 -2" />
-              <path d="M17 17l-2 2l2 2" />
-            </svg>
+          <div class="about-evidence-row">
+            <span>Education</span>
+            <strong>Software Engineering, Moringa School</strong>
+            <small>B.Sc. Mechanical and Manufacturing Engineering, Multimedia University of Kenya</small>
           </div>
-          <h3 class="text-xl font-semibold text-center mb-2">Expertise</h3>
-          <p class="text-center text-gray-600">
-            Full-Stack Engineering<br />
-            CI/CD & Infrastructure
-          </p>
+          <div class="about-evidence-row">
+            <span>Cloud-native credentials</span>
+            <strong>Kubernetes and Cloud Native Associate (KCNA)</strong>
+            <small>Introduction to Kubernetes (LFS158)</small>
+          </div>
         </div>
       </div>
 
-      <!-- About Text -->
-      <div class="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto" data-motion-item="about-copy">
-        <p class="text-gray-700 leading-relaxed">
-          I am a full-stack software engineer with hands-on DevOps experience. I build production applications with
-          TypeScript, Angular, React, and Next.js on the frontend, and Python, Django, PostgreSQL, and RabbitMQ on the
-          backend. I also design CI/CD pipelines, manage containerised deployments with Docker Swarm, and administer
-          self-hosted environments so the software I build can ship reliably.
-        </p>
+      <div class="about-principles" data-motion-item="about-copy">
+        <div><span>01</span><strong>Product engineering</strong><p>Usable interfaces backed by clear domain models and API contracts.</p></div>
+        <div><span>02</span><strong>System reliability</strong><p>Testing, observability, asynchronous processing, and deliberate failure handling.</p></div>
+        <div><span>03</span><strong>Delivery ownership</strong><p>CI/CD, containers, secrets, cloud infrastructure, and self-hosted operations.</p></div>
       </div>
 
-      <!-- Arrow -->
       <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-
     </div>
   </section>
 
   <section id="experience" class="experience-section" data-motion="section">
-    <p class="section__text__p1" data-motion-item="eyebrow">Explore My</p>
-    <h1 class="title" data-motion-item="heading">Skills</h1>
+    <p class="section__text__p1" data-motion-item="eyebrow">Capabilities in Practice</p>
+    <h1 class="title" data-motion-item="heading">Engineering Skills</h1>
     <div class="experience-details-container">
-      <div class="about-containers" data-motion-group="skills">
+      <div class="about-containers skills-layout" data-motion-group="skills">
+        <section class="details-container skill-domain">
+          <span class="skill-index">01 / Product interfaces</span>
+          <h2 class="experience-sub-title">Frontend Systems</h2>
+          <p class="skill-summary">Production web and mobile experiences built for performance, accessibility, and maintainable delivery.</p>
+          <dl class="skill-rows">
+            <div><dt>Core</dt><dd>TypeScript, JavaScript, Angular, React, Next.js, React Native</dd></div>
+            <div><dt>Interface</dt><dd>HTML5, CSS3, SCSS, Tailwind CSS, responsive UI</dd></div>
+            <div><dt>Quality</dt><dd>Jest, React Testing Library, REST integration, Three.js, React Three Fiber</dd></div>
+          </dl>
+        </section>
 
-        <!-- Frontend Development -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Frontend Development</h2>
-          <div class="article-container">
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Angular, React & Next.js</h3>
-                <p>Web applications</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>TypeScript & JavaScript</h3>
-                <p>Core languages</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>React Native</h3>
-                <p>Cross-platform apps</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>CSS & SCSS</h3>
-                <p>Responsive interfaces</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Three.js & React Three Fiber</h3>
-                <p>Interactive experiences</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Unit & Integration Testing</h3>
-                <p>Quality assurance</p>
-              </div>
-            </article>
-          </div>
-        </div>
+        <section class="details-container skill-domain">
+          <span class="skill-index">02 / Services and data</span>
+          <h2 class="experience-sub-title">Backend & Architecture</h2>
+          <p class="skill-summary">Business requirements translated into service boundaries, data models, contracts, and asynchronous workflows.</p>
+          <dl class="skill-rows">
+            <div><dt>Services</dt><dd>Python, Django, C#, .NET</dd></div>
+            <div><dt>Architecture</dt><dd>RESTful API design, Swagger/OpenAPI, microservices</dd></div>
+            <div><dt>Data and async</dt><dd>PostgreSQL schema design, RabbitMQ, Temporal</dd></div>
+          </dl>
+        </section>
 
-        <!-- Backend Development -->
-        <div class="details-container">
-          <h2 class="experience-sub-title">Backend Development</h2>
-          <div class="article-container">
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Python & Django</h3>
-                <p>Application services</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>PostgreSQL</h3>
-                <p>Data persistence</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>RESTful API Development</h3>
-                <p>Design & integration</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>RabbitMQ</h3>
-                <p>Async workflows</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <!-- DevOps & Cloud -->
-        <div class="details-container">
+        <section class="details-container skill-domain">
+          <span class="skill-index">03 / Platform ownership</span>
           <h2 class="experience-sub-title">DevOps & Infrastructure</h2>
-          <div class="article-container">
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Docker & Docker Swarm</h3>
-                <p>Container orchestration</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Azure & Proxmox</h3>
-                <p>Cloud & on-premise</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>GitHub Actions</h3>
-                <p>CI/CD automation</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Nginx & Shell Scripting</h3>
-                <p>Operations & automation</p>
-              </div>
-            </article>
-            <article>
-              <img src="./src/assets/checkmark.png" alt="Experience icon" class="icon" />
-              <div>
-                <h3>Self-Hosted OSS</h3>
-                <p>Gitea, Harbor, Wiki.js, Portainer</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
+          <p class="skill-summary">Repeatable delivery systems and environments that engineering teams can operate without friction.</p>
+          <dl class="skill-rows">
+            <div><dt>Runtime</dt><dd>Azure, Docker, Docker Swarm, Nginx</dd></div>
+            <div><dt>Delivery</dt><dd>Git, GitHub Actions, CI/CD, shell scripting</dd></div>
+            <div><dt>Operations</dt><dd>Proxmox, Gitea, Harbor, Wiki.js, Portainer</dd></div>
+          </dl>
+        </section>
       </div>
     </div>
     <img src="./src/assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#career'" />
@@ -329,8 +200,8 @@
         <span class="stat-label">Years Experience</span>
       </div>
       <div class="stat-item">
-        <span class="stat-number">10+</span>
-        <span class="stat-label">Production Deliverables</span>
+        <span class="stat-number">85%</span>
+        <span class="stat-label">Less Manual Deployment Effort</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">50%</span>
@@ -349,18 +220,18 @@
             <span class="date">Jan 2024 - Present</span>
             <div class="company-badge">
               <span class="company">Techridian</span>
-              <span class="role">Full-Stack Developer</span>
+              <span class="role">Full-Stack Developer &middot; Contract</span>
             </div>
           </div>
         </div>
         <div class="timeline-content">
           <div class="content-body">
             <ul class="achievements">
-              <li>Build Angular and TypeScript frontends with Django, Python, PostgreSQL, and RabbitMQ backends for clients across East Africa</li>
-              <li>Translate Figma designs into pixel-accurate interfaces using custom responsive CSS and SCSS</li>
-              <li>Design REST APIs with clear conventions for versioning, errors, authentication, and permissions</li>
-              <li>Build asynchronous workflows for background tasks and notifications using RabbitMQ</li>
-              <li>Own Docker infrastructure, CI/CD pipelines, and staging and production environments end to end</li>
+              <li>Build and maintain full-stack Angular and Django applications for clients across East Africa</li>
+              <li>Translate Figma designs into pixel-accurate, production-ready interfaces while contributing to UX decisions</li>
+              <li>Turn business requirements into database models, backend services, API contracts, and frontend integrations</li>
+              <li>Own infrastructure and deployment across staging and production environments</li>
+              <li>Contribute to code reviews and unit, integration, and end-to-end testing</li>
             </ul>
           </div>
           <div class="tech-stack">
@@ -370,6 +241,7 @@
             <span>PostgreSQL</span>
             <span>RabbitMQ</span>
             <span>Docker</span>
+            <span>Testing</span>
           </div>
         </div>
       </div>
@@ -384,26 +256,31 @@
             <span class="date">2025 - Jul 2026</span>
             <div class="company-badge">
               <span class="company">Cognativ</span>
-              <span class="role">DevOps Engineer &middot; USA, Remote</span>
+              <span class="role">Full Stack Developer &amp; DevOps Engineer &middot; USA, Remote</span>
             </div>
           </div>
         </div>
         <div class="timeline-content">
           <div class="content-body">
             <ul class="achievements">
+              <li>Built .NET backend and Angular frontend features within a microservices architecture</li>
               <li>Built GitHub Actions pipelines on self-hosted runners, reducing manual deployment effort by about 85% across 10+ servers</li>
-              <li>Built self-service platforms for real-time dev and QA visibility, cutting shipping time by 50%</li>
+              <li>Created internal self-service platforms for real-time dev and QA visibility, cutting shipping time by 50%</li>
               <li>Implemented secrets and access management with Docker secrets, Azure Key Vault, environment-based configuration, and SSH keys</li>
-              <li>Deployed and managed Docker Swarm clusters and standardised containerisation practices</li>
-              <li>Provisioned Proxmox virtual machines and multi-zone Azure infrastructure</li>
+              <li>Managed Docker Swarm clusters, Proxmox virtual machines, and Azure infrastructure while standardising container practices</li>
+              <li>Documented and tested APIs with Swagger and Postman, and led cross-layer troubleshooting to minimise downtime</li>
             </ul>
           </div>
           <div class="tech-stack">
             <span>Azure</span>
+            <span>.NET</span>
+            <span>Angular</span>
+            <span>Microservices</span>
             <span>Docker Swarm</span>
             <span>GitHub Actions</span>
             <span>Proxmox</span>
             <span>Azure Key Vault</span>
+            <span>Swagger</span>
           </div>
         </div>
       </div>
@@ -425,7 +302,7 @@
         <div class="timeline-content">
           <div class="content-body">
             <ul class="achievements">
-              <li>Built scalable frontend applications using Next.js and React Native for YAKWETU's entertainment platform</li>
+              <li>Built scalable frontend applications with TypeScript, Next.js, and React Native for YAKWETU's entertainment platform</li>
               <li>Led development of the MyMovies Africa mini-app on the M-PESA App</li>
               <li>Integrated Sentry and Vercel monitoring to track Core Web Vitals and production errors</li>
             </ul>
