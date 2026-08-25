@@ -77,7 +77,7 @@ A front-end developer with expertise in building large-scale, high-performing, u
 - **File Storage:** Integrated Cloudflare R2 for secure, high-performance file delivery.  
 - **Payment Integration:** Implemented Paystack API for secure transaction processing.
 
-### Scoreanalyzr  
+### Scorelearn
 - **Description:** Built responsive frontend interface for automated score digitization with React and TypeScript.  
 - **Features:**  
   - Implemented performance-optimized file upload handling and real-time data visualization.  

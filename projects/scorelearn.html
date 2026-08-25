@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="../src/assets/me.jpg" />
+  <meta name="description"
+    content="Scorelearn engineering case study by Evans Gitahi: multi-format music transcription, asynchronous processing, symbolic score normalization, music theory analysis, notation, and MIDI playback." />
+  <title>Scorelearn Case Study | Evans Gitahi</title>
+  <link href="../src/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="../src/style.css" />
+  <link rel="stylesheet" href="../src/mediaqueries.css" />
+</head>
+
+<body class="case-study-page">
+  <nav id="desktop-nav" class="nav-container" aria-label="Primary navigation">
+    <a class="logo" href="../index.html#profile">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Full-Stack & DevOps</span>
+    </a>
+    <div>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Skills</a></li>
+        <li><a href="../index.html#career">Experience</a></li>
+        <li><a href="../index.html#projects" aria-current="true">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav" aria-label="Mobile navigation">
+    <a class="logo" href="../index.html#profile">
+      <span class="logo-text gradient-text">Evans Gitahi</span>
+      <span class="logo-subtitle">Full-Stack & DevOps</span>
+    </a>
+    <div class="hamburger-menu">
+      <button class="hamburger-icon" type="button" aria-label="Open navigation menu" aria-expanded="false"
+        aria-controls="mobile-menu-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu-links" id="mobile-menu-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#experience">Skills</a></li>
+        <li><a href="../index.html#career">Experience</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="case-study-main">
+    <section class="case-study-hero">
+      <div class="case-study-hero-inner">
+        <div>
+          <p class="case-study-eyebrow">Music intelligence pipeline case study</p>
+          <h1 class="case-study-title">Scorelearn</h1>
+          <p class="case-study-lede">
+            I built a full-stack workflow that turns sheet-music PDFs, score images, and recorded audio into one
+            analyzable score model, then makes the result visible, playable, downloadable, and easier to understand.
+          </p>
+          <div class="case-study-meta">
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Role</span>
+              <span class="case-study-meta-value">System design, full-stack implementation, and deployment</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Stack</span>
+              <span class="case-study-meta-value">Next.js, TypeScript, Django REST, Celery, PostgreSQL, Redis, Music21</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Core constraint</span>
+              <span class="case-study-meta-value">Unify noisy visual and audio inputs without hiding transcription uncertainty</span>
+            </div>
+            <div class="case-study-meta-item">
+              <span class="case-study-meta-label">Delivery state</span>
+              <span class="case-study-meta-value">Live product with active transcription-quality and hardening work</span>
+            </div>
+          </div>
+          <div class="case-study-actions">
+            <a class="btn btn-color-1" href="https://scorelearn.site" target="_blank" rel="noopener noreferrer"
+              referrerpolicy="no-referrer">Live Demo</a>
+            <a class="btn btn-color-2" href="https://github.com/gitahievans/scoreanalyzr" target="_blank"
+              rel="noopener noreferrer">Frontend Repo</a>
+            <a class="btn btn-color-2" href="https://github.com/gitahievans/nota_db" target="_blank"
+              rel="noopener noreferrer">Backend Repo</a>
+          </div>
+        </div>
+        <figure class="case-study-image">
+          <img src="../src/assets/score.png" alt="Scorelearn score upload and analysis interface" />
+        </figure>
+      </div>
+    </section>
+
+    <div class="case-study-content">
+      <section class="case-study-section case-study-intro">
+        <h2>Engineering brief</h2>
+        <div>
+          <p class="case-study-callout">
+            Scorelearn treats score analysis as a pipeline, not a single AI request. It first converts different media into
+            symbolic music, repairs that intermediate representation, derives inspectable music-theory facts, and only
+            then uses generation to explain those facts to a learner.
+          </p>
+          <div class="case-study-facts" aria-label="Project facts">
+            <div><strong>Inputs</strong><span>PDF, JPEG, PNG, TIFF, WebP, MP3, WAV, and M4A</span></div>
+            <div><strong>Outputs</strong><span>Structured analysis, MusicXML, MIDI, notation, playback, summary</span></div>
+            <div><strong>Surfaces</strong><span>Upload, live job progress, results, score viewer, player</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>System boundary</h2>
+        <div>
+          <p>
+            The browser owns interaction and visualization, while Django owns validation and the score record. Heavy
+            recognition and analysis leave the request cycle entirely: Celery workers branch by source type, converge
+            on MusicXML, and persist both structured results and artifact endpoints for the frontend.
+          </p>
+          <ol class="architecture-flow" aria-label="Scorelearn processing flow">
+            <li><span>01</span><strong>Next.js workspace</strong><small>Upload, task polling, results, notation, playback</small></li>
+            <li><span>02</span><strong>Django REST API</strong><small>File validation, records, task dispatch, artifact delivery</small></li>
+            <li><span>03</span><strong>Celery pipeline</strong><small>Audiveris OMR or Basic Pitch audio transcription</small></li>
+            <li><span>04</span><strong>Symbolic core</strong><small>Normalization, Music21 analysis, MusicXML and MIDI</small></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Critical decisions</h2>
+        <div class="decision-list">
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 01 / Architecture</p>
+            <h3>Converge every source on a symbolic score</h3>
+            <p>PDFs and images pass through Audiveris optical music recognition; audio passes through Basic Pitch to produce MIDI. Both branches become MusicXML before the rest of the product analyzes or presents them.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> analysis, notation, playback, and downloads share one downstream contract instead of duplicating logic for every input type.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 02 / Responsiveness</p>
+            <h3>Model long-running work as an observable job</h3>
+            <p>Uploads dispatch a Celery task through Redis. The worker publishes named stages and progress percentages, while React Query polls the score endpoint and stops only at a terminal state.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> expensive recognition never holds an HTTP request open, and a failed validation, transcription, cleanup, or analysis stage remains visible to the user.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 03 / Data quality</p>
+            <h3>Repair the transcription before trusting its analysis</h3>
+            <p>The normalization pass quantizes timing and duration, removes duplicate or overlapping note events, limits implausibly dense onsets, selects a clef, and can split piano-range material into two staves.</p>
+            <p class="decision-impact"><strong>Tradeoff:</strong> cleanup can simplify nuance, but it produces a more stable draft for theory analysis and playback. The interface labels audio transcriptions as drafts rather than polished engraving.</p>
+          </article>
+          <article class="decision-item">
+            <p class="decision-kicker">Decision 04 / AI boundary</p>
+            <h3>Derive musical facts before generating an explanation</h3>
+            <p>Music21 detects key, meter, tempo, parts, instrumentation, chords, measures, dynamics, accidentals, and articulations. Gemini receives those results afterward to create a concise, beginner-focused explanation.</p>
+            <p class="decision-impact"><strong>Why it matters:</strong> generative text explains an inspectable analysis payload; it is not asked to infer the score directly from an opaque upload.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Learning workspace</h2>
+        <div class="case-study-grid case-study-grid-three">
+          <article class="case-study-panel">
+            <p class="panel-number">01</p><h3>Inspect the score</h3>
+            <p>OpenSheetMusicDisplay renders the generated MusicXML with responsive zoom and pan, and users can download the symbolic score for work in other notation tools.</p>
+          </article>
+          <article class="case-study-panel">
+            <p class="panel-number">02</p><h3>Hear the result</h3>
+            <p>A Tone.js MIDI player exposes transport, progress, tempo, volume, and instrument controls. Audio uploads keep the source recording available beside the generated score playback.</p>
+          </article>
+          <article class="case-study-panel">
+            <p class="panel-number">03</p><h3>Understand the theory</h3>
+            <p>Results separate primary signatures from structure and performance details, then add an on-demand explanation aimed at learners who may not yet know the terminology.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>Production lens</h2>
+        <div>
+          <div class="readiness-table" role="table" aria-label="Scorelearn production readiness">
+            <div class="readiness-row readiness-head" role="row"><span>Concern</span><span>Current evidence</span><span>Boundary</span></div>
+            <div class="readiness-row" role="row"><strong>Frontend</strong><span>Next.js deployed through OpenNext on Cloudflare with a custom domain</span><span class="status-done">Live</span></div>
+            <div class="readiness-row" role="row"><strong>Runtime</strong><span>Containerized Django, Celery, PostgreSQL, Redis, and Caddy services with health checks</span><span class="status-done">Operational topology</span></div>
+            <div class="readiness-row" role="row"><strong>Input safety</strong><span>Extension and MIME allow-lists, explicit source types, file-size checks, isolated job workspaces</span><span class="status-done">Implemented</span></div>
+            <div class="readiness-row" role="row"><strong>Lifecycle</strong><span>Per-job temporary artifacts and delayed cleanup after processing</span><span class="status-watch">Retention depends on artifact access needs</span></div>
+            <div class="readiness-row" role="row"><strong>Accuracy</strong><span>Cleanup metadata, draft labels, stage-specific failures, guidance for unsuitable audio</span><span class="status-watch">Benchmark against a representative score corpus</span></div>
+            <div class="readiness-row" role="row"><strong>Operations</strong><span>Structured worker stages and progress are exposed to the client</span><span class="status-watch">Add service metrics, tracing, and queue alerts</span></div>
+          </div>
+          <p class="case-study-note">
+            Music transcription is probabilistic: clean solo recordings and high-quality scans work better than dense
+            mixes or damaged scores. The product communicates that boundary and presents generated notation as an
+            editable draft, while the next hardening step is measuring accuracy across a representative test corpus.
+          </p>
+        </div>
+      </section>
+
+      <section class="case-study-section">
+        <h2>What this demonstrates</h2>
+        <div>
+          <ul class="case-study-checklist">
+            <li>Designing a heterogeneous media pipeline around a stable symbolic intermediate representation.</li>
+            <li>Moving CPU-heavy recognition into asynchronous workers with explicit progress, failure, and cleanup states.</li>
+            <li>Combining deterministic music analysis with a deliberately narrow generative explanation layer.</li>
+            <li>Building one responsive workspace across upload, analysis, score rendering, audio, MIDI, and downloadable artifacts.</li>
+          </ul>
+          <div class="case-study-tags" aria-label="Technical competencies">
+            <span>Next.js</span><span>TypeScript</span><span>Django REST Framework</span><span>Celery</span>
+            <span>PostgreSQL</span><span>Redis</span><span>Audiveris</span><span>Basic Pitch</span>
+            <span>Music21</span><span>MusicXML</span><span>OpenSheetMusicDisplay</span><span>Tone.js</span>
+            <span>Cloudflare</span><span>Docker</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <section class="case-study-nav" aria-label="Project navigation">
+    <div class="case-study-nav-inner">
+      <a class="case-study-nav-link" href="../index.html#projects">Back to Projects</a>
+      <a class="case-study-nav-link" href="./ladyshelf.html">Next Case Study: LadyShelf</a>
+    </div>
+  </section>
+
+  <script type="module" src="../src/main.js"></script>
+</body>
+
+</html>
