@@ -1,0 +1,173 @@
+@import "tailwindcss" source(none);
+@source "./**/*.{ts,tsx}";
+@source "../components/**/*.{ts,tsx}";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* The only palette definitions for the Next.js application. */
+:root {
+  --duration-micro: 150ms;
+  --duration-reveal: 240ms;
+  --z-navigation: 40;
+  --z-menu: 50;
+  --z-skip-link: 60;
+  --light-background: #f6f2e8;
+  --light-surface: #fffcf5;
+  --light-elevated: #ebe5d9;
+  --light-foreground: #282923;
+  --light-secondary: #514f45;
+  --light-muted: #666357;
+  --light-accent: #65532f;
+  --light-accent-foreground: #fffaf0;
+  --light-border: #d7d0bf;
+  --light-border-strong: #7a715e;
+  --light-focus-ring: #65532f;
+  --light-shadow: 0 8px 24px #2829230a;
+
+  --dark-background: #171816;
+  --dark-surface: #20211e;
+  --dark-elevated: #2b2c27;
+  --dark-foreground: #f2eee3;
+  --dark-secondary: #d0ccbe;
+  --dark-muted: #b6b2a4;
+  --dark-accent: #fdfbd4;
+  --dark-accent-foreground: #272820;
+  --dark-border: #3b3c35;
+  --dark-border-strong: #858675;
+  --dark-focus-ring: #decf9b;
+  --dark-shadow: 0 8px 24px #00000029;
+
+  color-scheme: light;
+  --background: var(--light-background);
+  --surface: var(--light-surface);
+  --elevated: var(--light-elevated);
+  --foreground: var(--light-foreground);
+  --secondary: var(--light-secondary);
+  --muted: var(--light-muted);
+  --accent: var(--light-accent);
+  --accent-foreground: var(--light-accent-foreground);
+  --border: var(--light-border);
+  --border-strong: var(--light-border-strong);
+  --focus-ring: var(--light-focus-ring);
+  --surface-shadow: var(--light-shadow);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: var(--dark-background);
+  --surface: var(--dark-surface);
+  --elevated: var(--dark-elevated);
+  --foreground: var(--dark-foreground);
+  --secondary: var(--dark-secondary);
+  --muted: var(--dark-muted);
+  --accent: var(--dark-accent);
+  --accent-foreground: var(--dark-accent-foreground);
+  --border: var(--dark-border);
+  --border-strong: var(--dark-border-strong);
+  --focus-ring: var(--dark-focus-ring);
+  --surface-shadow: var(--dark-shadow);
+}
+
+/* No-JavaScript fallback: reuse the dark palette without duplicating values. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --background: var(--dark-background);
+    --surface: var(--dark-surface);
+    --elevated: var(--dark-elevated);
+    --foreground: var(--dark-foreground);
+    --secondary: var(--dark-secondary);
+    --muted: var(--dark-muted);
+    --accent: var(--dark-accent);
+    --accent-foreground: var(--dark-accent-foreground);
+    --border: var(--dark-border);
+    --border-strong: var(--dark-border-strong);
+    --focus-ring: var(--dark-focus-ring);
+    --surface-shadow: var(--dark-shadow);
+  }
+}
+
+@theme inline {
+  --color-*: initial;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-focus-ring: var(--focus-ring);
+  --font-body: var(--font-dm-sans), system-ui, sans-serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --shadow-surface: var(--surface-shadow);
+}
+
+@theme {
+  --breakpoint-*: initial;
+  /* Mobile-first equivalents of the legacy 520/800/1100px boundaries. */
+  --breakpoint-sm: 32.5625rem;
+  --breakpoint-md: 50.0625rem;
+  --breakpoint-desktop: 68.8125rem;
+  --container-content: 80rem;
+  --container-reading: 44rem;
+  --container-menu: 22.5rem;
+  --spacing-section: 6rem;
+  --spacing-section-small: 4.5rem;
+  --spacing-nav: 5rem;
+  --spacing-nav-mobile: 3.75rem;
+  --spacing-menu-height: calc(100svh - var(--spacing-nav-mobile));
+  --grid-template-columns-study-hero: minmax(0, 0.95fr) minmax(20rem, 1.05fr);
+  --grid-template-columns-study-section: minmax(11.25rem, 0.34fr) minmax(0, 0.66fr);
+  --spacing-table: 32rem;
+  --grid-template-columns-about: minmax(0, 1.35fr) minmax(18.75rem, 0.65fr);
+  --grid-template-columns-skill: 5rem minmax(0, 1fr);
+  --grid-template-columns-timeline: 10rem minmax(0, 1fr);
+  --text-hero: clamp(3.75rem, 8vw, 6.5rem);
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.035em;
+  --text-heading: clamp(2.5rem, 5vw, 4rem);
+  --text-heading--line-height: 1.15;
+  --text-heading--letter-spacing: -0.025em;
+  --radius-control: 0.5rem;
+  --radius-card: 0.875rem;
+  --ease-calm: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    min-width: 20rem;
+    scroll-padding-top: calc(var(--spacing-nav-mobile) + 1rem);
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+@media (width >= theme(--breakpoint-desktop)) {
+  html { scroll-padding-top: calc(var(--spacing-nav) + 1rem); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

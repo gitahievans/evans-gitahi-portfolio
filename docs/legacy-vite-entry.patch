@@ -1,0 +1,12 @@
+diff --git a/vite.config.js b/vite.config.js
+index 591bfcf..456b455 100644
+--- a/vite.config.js
++++ b/vite.config.js
+@@ -8,6 +8,7 @@ export default defineConfig({
+         main: resolve(__dirname, "index.html"),
+         sceneit: resolve(__dirname, "projects/sceneit.html"),
+         ladyshelf: resolve(__dirname, "projects/ladyshelf.html"),
++        scorelearn: resolve(__dirname, "projects/scorelearn.html"),
+       },
+     },
+   },

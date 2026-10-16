@@ -1,0 +1,736 @@
+{
+  "note": "Phase 1 source snapshot; HTML comments excluded. External destinations recorded, not requested. Inventory intentionally describes the legacy site.",
+  "pages": {
+    "index.html": {
+      "ids": [
+        "desktop-nav",
+        "hamburger-nav",
+        "mobile-menu-links",
+        "profile",
+        "socials-container",
+        "about",
+        "experience",
+        "career",
+        "projects",
+        "contact"
+      ],
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Evans Gitahi"
+        },
+        {
+          "level": "h1",
+          "text": "About Me"
+        },
+        {
+          "level": "h1",
+          "text": "Engineering Skills"
+        },
+        {
+          "level": "h2",
+          "text": "Frontend Systems"
+        },
+        {
+          "level": "h2",
+          "text": "Backend & Architecture"
+        },
+        {
+          "level": "h2",
+          "text": "DevOps & Infrastructure"
+        },
+        {
+          "level": "h1",
+          "text": "Professional Journey"
+        },
+        {
+          "level": "h1",
+          "text": "Projects"
+        },
+        {
+          "level": "h2",
+          "text": "Scorelearn"
+        },
+        {
+          "level": "h2",
+          "text": "LadyShelf"
+        },
+        {
+          "level": "h2",
+          "text": "SceneIt"
+        },
+        {
+          "level": "h1",
+          "text": "Contact Me"
+        }
+      ],
+      "references": [
+        {
+          "tag": "link",
+          "url": "./src/assets/me.jpg"
+        },
+        {
+          "tag": "link",
+          "url": "./src/output.css"
+        },
+        {
+          "tag": "link",
+          "url": "./src/style.css"
+        },
+        {
+          "tag": "link",
+          "url": "./src/mediaqueries.css"
+        },
+        {
+          "tag": "a",
+          "url": "#about"
+        },
+        {
+          "tag": "a",
+          "url": "#experience"
+        },
+        {
+          "tag": "a",
+          "url": "#career"
+        },
+        {
+          "tag": "a",
+          "url": "#projects"
+        },
+        {
+          "tag": "a",
+          "url": "#contact"
+        },
+        {
+          "tag": "a",
+          "url": "https://www.linkedin.com/in/evans-gitahi/"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans"
+        },
+        {
+          "tag": "img",
+          "url": "./src/assets/arrow.png"
+        },
+        {
+          "tag": "a",
+          "url": "./projects/scorelearn.html"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/scoreanalyzr"
+        },
+        {
+          "tag": "a",
+          "url": "https://scorelearn.site"
+        },
+        {
+          "tag": "a",
+          "url": "./projects/ladyshelf.html"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/ladyshelf"
+        },
+        {
+          "tag": "a",
+          "url": "https://ladyshelf.site"
+        },
+        {
+          "tag": "a",
+          "url": "./projects/sceneit.html"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/SceneIt"
+        },
+        {
+          "tag": "a",
+          "url": "https://seen-it-aymo.vercel.app/"
+        },
+        {
+          "tag": "a",
+          "url": "mailto:evanygk@gmail.com"
+        },
+        {
+          "tag": "script",
+          "url": "./src/main.js"
+        }
+      ],
+      "images": [
+        {
+          "src": "./src/assets/arrow.png",
+          "alt": "Arrow icon",
+          "class": "icon arrow",
+          "onclick": "location.href='./#experience'"
+        },
+        {
+          "src": "./src/assets/arrow.png",
+          "alt": "Arrow icon",
+          "class": "icon arrow",
+          "onclick": "location.href='./#career'"
+        },
+        {
+          "src": "./src/assets/arrow.png",
+          "alt": "Arrow icon",
+          "class": "icon arrow",
+          "onclick": "location.href='./#projects'"
+        },
+        {
+          "src": "./src/assets/arrow.png",
+          "alt": "Arrow icon",
+          "class": "icon arrow",
+          "onclick": "location.href='./#contact'"
+        }
+      ]
+    },
+    "projects/ladyshelf.html": {
+      "ids": [
+        "desktop-nav",
+        "hamburger-nav",
+        "mobile-menu-links"
+      ],
+      "headings": [
+        {
+          "level": "h1",
+          "text": "LadyShelf"
+        },
+        {
+          "level": "h2",
+          "text": "Engineering brief"
+        },
+        {
+          "level": "h2",
+          "text": "System boundary"
+        },
+        {
+          "level": "h2",
+          "text": "Critical decisions"
+        },
+        {
+          "level": "h3",
+          "text": "Re-price and reserve stock inside one database transaction"
+        },
+        {
+          "level": "h3",
+          "text": "Treat payment as a state machine, not a redirect"
+        },
+        {
+          "level": "h3",
+          "text": "Separate authentication from the commerce profile"
+        },
+        {
+          "level": "h3",
+          "text": "Model staff work as a first-class product surface"
+        },
+        {
+          "level": "h2",
+          "text": "Failure design"
+        },
+        {
+          "level": "h3",
+          "text": "Commit before side effects"
+        },
+        {
+          "level": "h3",
+          "text": "Recover abandoned inventory"
+        },
+        {
+          "level": "h3",
+          "text": "Make AI work reviewable"
+        },
+        {
+          "level": "h2",
+          "text": "Production posture"
+        },
+        {
+          "level": "h2",
+          "text": "What this demonstrates"
+        }
+      ],
+      "references": [
+        {
+          "tag": "link",
+          "url": "../src/assets/me.jpg"
+        },
+        {
+          "tag": "link",
+          "url": "../src/output.css"
+        },
+        {
+          "tag": "link",
+          "url": "../src/style.css"
+        },
+        {
+          "tag": "link",
+          "url": "../src/mediaqueries.css"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#profile"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#about"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#experience"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#career"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#projects"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#contact"
+        },
+        {
+          "tag": "a",
+          "url": "https://ladyshelf.site"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/ladyshelf"
+        },
+        {
+          "tag": "img",
+          "url": "../src/assets/ladyshelf.png"
+        },
+        {
+          "tag": "a",
+          "url": "./sceneit.html"
+        },
+        {
+          "tag": "script",
+          "url": "../src/main.js"
+        }
+      ],
+      "images": [
+        {
+          "src": "../src/assets/ladyshelf.png",
+          "alt": "LadyShelf fashion commerce storefront interface"
+        }
+      ]
+    },
+    "projects/sceneit.html": {
+      "ids": [
+        "desktop-nav",
+        "hamburger-nav",
+        "mobile-menu-links"
+      ],
+      "headings": [
+        {
+          "level": "h1",
+          "text": "SceneIt"
+        },
+        {
+          "level": "h2",
+          "text": "Engineering brief"
+        },
+        {
+          "level": "h2",
+          "text": "System boundary"
+        },
+        {
+          "level": "h2",
+          "text": "Critical decisions"
+        },
+        {
+          "level": "h3",
+          "text": "Build an anti-corruption layer around TMDB"
+        },
+        {
+          "level": "h3",
+          "text": "Use a deterministic plan before generative output"
+        },
+        {
+          "level": "h3",
+          "text": "Ground explanations in retrieved metadata and degrade gracefully"
+        },
+        {
+          "level": "h3",
+          "text": "Keep discovery public and personalization authenticated"
+        },
+        {
+          "level": "h2",
+          "text": "Performance reasoning"
+        },
+        {
+          "level": "h3",
+          "text": "Layered caching"
+        },
+        {
+          "level": "h3",
+          "text": "Adaptive query cost"
+        },
+        {
+          "level": "h3",
+          "text": "Concurrent enrichment"
+        },
+        {
+          "level": "h2",
+          "text": "Production lens"
+        },
+        {
+          "level": "h2",
+          "text": "What this demonstrates"
+        }
+      ],
+      "references": [
+        {
+          "tag": "link",
+          "url": "../src/assets/me.jpg"
+        },
+        {
+          "tag": "link",
+          "url": "../src/output.css"
+        },
+        {
+          "tag": "link",
+          "url": "../src/style.css"
+        },
+        {
+          "tag": "link",
+          "url": "../src/mediaqueries.css"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#profile"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#about"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#experience"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#career"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#projects"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#contact"
+        },
+        {
+          "tag": "a",
+          "url": "https://seen-it-aymo.vercel.app/"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/SceneIt"
+        },
+        {
+          "tag": "img",
+          "url": "../src/assets/sceneit.png"
+        },
+        {
+          "tag": "a",
+          "url": "./ladyshelf.html"
+        },
+        {
+          "tag": "script",
+          "url": "../src/main.js"
+        }
+      ],
+      "images": [
+        {
+          "src": "../src/assets/sceneit.png",
+          "alt": "SceneIt movie recommendation app interface"
+        }
+      ]
+    },
+    "projects/scorelearn.html": {
+      "ids": [
+        "desktop-nav",
+        "hamburger-nav",
+        "mobile-menu-links"
+      ],
+      "headings": [
+        {
+          "level": "h1",
+          "text": "Scorelearn"
+        },
+        {
+          "level": "h2",
+          "text": "Engineering brief"
+        },
+        {
+          "level": "h2",
+          "text": "System boundary"
+        },
+        {
+          "level": "h2",
+          "text": "Critical decisions"
+        },
+        {
+          "level": "h3",
+          "text": "Converge every source on a symbolic score"
+        },
+        {
+          "level": "h3",
+          "text": "Model long-running work as an observable job"
+        },
+        {
+          "level": "h3",
+          "text": "Repair the transcription before trusting its analysis"
+        },
+        {
+          "level": "h3",
+          "text": "Derive musical facts before generating an explanation"
+        },
+        {
+          "level": "h2",
+          "text": "Learning workspace"
+        },
+        {
+          "level": "h3",
+          "text": "Inspect the score"
+        },
+        {
+          "level": "h3",
+          "text": "Hear the result"
+        },
+        {
+          "level": "h3",
+          "text": "Understand the theory"
+        },
+        {
+          "level": "h2",
+          "text": "Production lens"
+        },
+        {
+          "level": "h2",
+          "text": "What this demonstrates"
+        }
+      ],
+      "references": [
+        {
+          "tag": "link",
+          "url": "../src/assets/me.jpg"
+        },
+        {
+          "tag": "link",
+          "url": "../src/output.css"
+        },
+        {
+          "tag": "link",
+          "url": "../src/style.css"
+        },
+        {
+          "tag": "link",
+          "url": "../src/mediaqueries.css"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#profile"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#about"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#experience"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#career"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#projects"
+        },
+        {
+          "tag": "a",
+          "url": "../index.html#contact"
+        },
+        {
+          "tag": "a",
+          "url": "https://scorelearn.site"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/scoreanalyzr"
+        },
+        {
+          "tag": "a",
+          "url": "https://github.com/gitahievans/nota_db"
+        },
+        {
+          "tag": "img",
+          "url": "../src/assets/score.png"
+        },
+        {
+          "tag": "a",
+          "url": "./ladyshelf.html"
+        },
+        {
+          "tag": "script",
+          "url": "../src/main.js"
+        }
+      ],
+      "images": [
+        {
+          "src": "../src/assets/score.png",
+          "alt": "Scorelearn score upload and analysis interface"
+        }
+      ]
+    }
+  },
+  "assets": [
+    {
+      "path": "public/Evans_Gitahi_Resume.pdf",
+      "bytes": 135786,
+      "active_references_from": []
+    },
+    {
+      "path": "public/vite.svg",
+      "bytes": 1497,
+      "active_references_from": []
+    },
+    {
+      "path": "src/assets/arrow.png",
+      "bytes": 15528,
+      "active_references_from": [
+        "index.html"
+      ],
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "path": "src/assets/azure-skyline.png",
+      "bytes": 571362,
+      "active_references_from": [],
+      "width": 1896,
+      "height": 1031
+    },
+    {
+      "path": "src/assets/checkmark.png",
+      "bytes": 18217,
+      "active_references_from": [],
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "path": "src/assets/education.png",
+      "bytes": 8621,
+      "active_references_from": [],
+      "width": 500,
+      "height": 500
+    },
+    {
+      "path": "src/assets/email.png",
+      "bytes": 18688,
+      "active_references_from": [],
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "path": "src/assets/experience.png",
+      "bytes": 9917,
+      "active_references_from": [],
+      "width": 500,
+      "height": 500
+    },
+    {
+      "path": "src/assets/github.png",
+      "bytes": 8640,
+      "active_references_from": [],
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "src/assets/home shot.png",
+      "bytes": 653981,
+      "active_references_from": [],
+      "width": 1080,
+      "height": 2207
+    },
+    {
+      "path": "src/assets/ladyshelf.png",
+      "bytes": 4741174,
+      "active_references_from": [
+        "projects/ladyshelf.html"
+      ],
+      "width": 2936,
+      "height": 1522
+    },
+    {
+      "path": "src/assets/linkedin.png",
+      "bytes": 12857,
+      "active_references_from": [],
+      "width": 512,
+      "height": 512
+    },
+    {
+      "path": "src/assets/me.jpg",
+      "bytes": 51344,
+      "active_references_from": [
+        "index.html",
+        "projects/ladyshelf.html",
+        "projects/sceneit.html",
+        "projects/scorelearn.html"
+      ],
+      "width": 1280,
+      "height": 953
+    },
+    {
+      "path": "src/assets/renters-hub.png",
+      "bytes": 1995426,
+      "active_references_from": [],
+      "width": 1898,
+      "height": 1028
+    },
+    {
+      "path": "src/assets/sceneit.png",
+      "bytes": 2317417,
+      "active_references_from": [
+        "projects/sceneit.html"
+      ],
+      "width": 1896,
+      "height": 1033
+    },
+    {
+      "path": "src/assets/score.png",
+      "bytes": 825324,
+      "active_references_from": [
+        "projects/scorelearn.html"
+      ],
+      "width": 1705,
+      "height": 923
+    },
+    {
+      "path": "src/assets/soundleaf.png",
+      "bytes": 617678,
+      "active_references_from": [],
+      "width": 1608,
+      "height": 1010
+    },
+    {
+      "path": "src/assets/transcargo.png",
+      "bytes": 549808,
+      "active_references_from": [],
+      "width": 1898,
+      "height": 1028
+    },
+    {
+      "path": "src/javascript.svg",
+      "bytes": 995,
+      "active_references_from": []
+    }
+  ],
+  "local_reference_checks": 53,
+  "local_reference_issues": []
+}

@@ -1,113 +1,40 @@
-# Evans Gitahi - Front-End Developer | 3 Years Experience
+# Evans Gitahi portfolio
 
-## Table of Contents
+Next.js App Router, TypeScript and Tailwind portfolio with light/dark/system themes, a homepage and three engineering case studies. The five-phase source migration is complete on `codex/nextjs-migration`; no production deployment has been performed. See [final verification](docs/migration-phase-5.md), [the migration plan](MIGRATION_PLAN.md) and [design-system conventions](docs/design-system.md).
 
-- [About](#about)
-- [Skills](#skills)
-- [Work Experience](#work-experience)
-- [Projects](#projects)
-- [Education](#education)
-- [Contact](#contact)
+## Development and checks
 
-📧 [evanygk@gmail.com](mailto:evanygk@gmail.com)  
-📞 +254722739527  
-🔗 [LinkedIn](#) | [GitHub](#) | [Portfolio](#)  
-🌍 Nairobi, Kenya  
+Use Node 24+ (`.nvmrc` selects 24) and npm. Python 3 is required for the static preview and export/HTTP checks. Build/fonts do not require a remote font provider.
 
-A front-end developer with expertise in building large-scale, high-performing, user-centric web applications. Proficient in React, TypeScript, Next.js, and React Native, plus strong backend development capabilities using Python and Django. Experienced in writing clean, testable, and maintainable code while optimizing for performance and delivering exceptional user experiences. Strong problem-solving skills, excellent collaboration abilities, and a keen eye for responsive design and accessibility.
+```sh
+npm ci
+npm run dev           # Next development server
+npm run build         # Static export to out/, including legacy HTML entries
+npm run preview       # Serve out/ at http://127.0.0.1:3000
+npm run typecheck
+npm run lint
+npm test
+npm run verify:export # After building: files, content, fragments and markup
+npm run verify:http   # Also checks production HTTP responses; needs loopback sockets
+```
 
-## Skills
+Production builds use Next's Webpack option because the migration environment restricted Turbopack build-worker sockets. All dependencies are pinned in `package-lock.json`; npm is the only package manager. The current lint dependency chain emits ESLint peer-range warnings during installation, but clean install and zero-warning lint pass. Five development-only audit findings remain upstream; the production dependency audit reports zero findings as of the recorded verification. See the Phase 5 report for details.
 
-### Front-end Development
-- TypeScript & JavaScript
-- React & Next.js
-- React Native
-- HTML5 & CSS3
-- Vercel
-- Vite & Webpack
-- REST API Integration
+## Content and styling
 
-### Development Practices
-- Collaborative development
-- Clean, maintainable code
-- Code documentation
-- Cross-functional teamwork
+- `src/app/` contains route composition, metadata, not-found output and the canonical CSS theme tokens.
+- `src/content/` holds typed profile, career, skills, project summaries and full case studies. Update factual portfolio content here.
+- `src/components/` contains shared primitives/layout, homepage sections, case-study rendering and scoped navigation/theme controls. Styles use semantic Tailwind utilities.
+- `public/images/` contains responsive WebP screenshots and the portrait favicon. `public/fonts/` contains font licenses; pinned Fontsource packages supply self-hosted font files at build time.
+- `public/Evans_Gitahi_Resume.pdf` remains the public resume download.
+- `tests/fixtures/legacy-content.json` preserves original active text and normalized link expectations independently of the removed legacy HTML. Deliberate future copy/link changes should update the fixture as part of their review.
 
-### Back-end Development
-- Python & Django
-- PostgreSQL
-- RESTful API development
+## Static hosting
 
-### DevOps & Infrastructure
-- Docker containerization
-- VPS Setup & Management
-- Cloudflare (R2, DNS)
-- CI/CD
-- Git & GitHub
+Publish the contents of `out/` at the domain root. Canonical project routes are `/projects/scorelearn/`, `/projects/ladyshelf/` and `/projects/sceneit/`. The build also creates full `/projects/{slug}.html` compatibility files, with no JavaScript redirect or server rule required. `/index.html` and the original homepage section fragments remain usable. Legacy project files are generated only in the production build, so `next dev` uses the canonical routes.
 
-## Work Experience
+The host must serve directory `index.html` files and return HTTP 404 for missing paths. Configure `404.html` as its error document while retaining the 404 status; do not enable an SPA fallback to the homepage. Python preview verifies status behavior but uses its own standard error body. No `next start`, image optimizer, API server, database or runtime secrets are needed. A deployment adapter/provider/domain has not been selected or configured.
 
-### Full-stack Developer  
-**YAKWETU™ Online Limited**  
-*08/2023 – Present | Nairobi, Kenya*  
-- Built scalable frontend applications using Next.js and React Native for YAKWETU's entertainment platform, focusing on high-performance user experiences and component-based architecture.  
-- Implemented performance optimization strategies and monitoring tools like Sentry and Vercel to track Core Web Vitals.  
-- Translated UI/UX designs from Figma into responsive, maintainable code, collaborating closely with cross-functional teams including designers and product managers.  
-- Refactored legacy codebase to improve performance and maintainability, ensuring clean and testable code standards.  
-- Worked remotely with cross-cultural team members, demonstrating strong collaboration skills.
+Local production HTTP checks pass. Visual rendering, native browser interactions, hydration and theme flashes remain unverified because browser review was explicitly excluded. Confirm the chosen host's routing/error-document behavior before switching production.
 
-### Volunteer Front-end Developer  
-**Mentorlst**  
-*03/2023 – 08/2023 | Nairobi, Kenya*  
-- Refactored codebase to eliminate redundancies and improve maintainability and performance.  
-- Implemented responsive web designs with precision, showcasing attention to detail and accessibility standards.  
-- Collaborated with developers, product managers, and designers to deliver high-quality features.  
-- Participated in product development meetings, contributing insights and ideas for scalable solutions.  
-- Conducted thorough code reviews to ensure code quality and adherence to best practices.
-
-## Projects
-
-### AuralTales  
-*(Full-Stack Development | Next.js, Django, PostgreSQL, Cloudflare R2, Docker, VPS, Paystack)*  
-- **Frontend & User Experience:** Developed a responsive Next.js web application with seamless audiobook purchasing and listening experience, implementing performance optimization for fast loading times.  
-- **Component Architecture:** Built scalable React components and maintainable TypeScript code for Admin & Author dashboards.  
-- **API Integration:** Integrated REST APIs for secure authentication, payments, and content management.  
-- **Backend Development:** Built secure Django backend with PostgreSQL, implementing RESTful API endpoints.  
-- **Infrastructure:** Configured Docker deployment on VPS with security hardening and CI/CD practices.  
-- **File Storage:** Integrated Cloudflare R2 for secure, high-performance file delivery.  
-- **Payment Integration:** Implemented Paystack API for secure transaction processing.
-
-### Scorelearn
-- **Description:** Built responsive frontend interface for automated score digitization with React and TypeScript.  
-- **Features:**  
-  - Implemented performance-optimized file upload handling and real-time data visualization.  
-  - Integrated AI-powered insights with Gemini AI for contextual analysis and summaries.  
-  - Created scalable architecture for end-to-end workflow processing.  
-  - Ensured accessibility and responsive design across all device sizes.
-
-### SceneIt  
-*Movie Recommendation App*  
-- **Description:** Collects information from users and tracks their interactions within the app then gives movie recommendations based on that.  
-- **Features:**  
-  - API integration.  
-  - Authentication and Authorization using Supabase Auth.  
-  - Built a clean, responsive and user-friendly UI.  
-  - Implemented unit testing.  
-  - Implemented CI/CD using GitHub Actions.
-
-## Education
-
-### Software Engineering  
-**Moringa School**  
-*05/2022 – 11/2022 | Nairobi, Kenya*  
-- Front-end software development  
-- Back-end software development  
-
-### Bsc. Mechanical And Manufacturing Engineering  
-**Multimedia University Of Kenya**  
-*09/2016 – 12/2021 | Nairobi, Kenya*  
-- Second class (Upper Division)  
-
----
-
-*Evans Gitahi*
+[Historical profile notes](docs/profile-notes-legacy.md) are retained separately; current website content comes from the typed modules above.
