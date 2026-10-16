@@ -4,15 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "bg-orange-50": "#fff7ed",
-        "bg-orange-100": "#fffaf0",
-        "bg-orange-200": "#feebc8",
-        "bg-orange-300": "#fbd38d",
-        "bg-orange-400": "#f6ad55",
-        "bg-orange-500": "#ed8936",
-        "bg-orange-600": "#dd6b20",
-        "bg-orange-700": "#c05621",
-        "bg-very-light-grey": "#f8f8f8",
+        /* ── Centralized design tokens matching style.css ── */
+        "bg-primary":   "#0d0d0d",
+        "bg-surface":   "#141414",
+        "bg-elevated":  "#1e1e1e",
+        "bg-card":      "#181818",
+        "cream":        "#FDFBD4",
+        "cream-muted":  "rgba(253, 251, 212, 0.75)",
+        "cream-dim":    "rgba(253, 251, 212, 0.35)",
+        "text-primary": "#ffffff",
+        "text-secondary": "rgba(255, 255, 255, 0.78)",
+        "text-muted":   "rgba(255, 255, 255, 0.52)",
       },
     },
   },
