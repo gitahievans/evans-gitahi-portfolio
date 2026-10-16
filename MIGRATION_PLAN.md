@@ -62,11 +62,11 @@ docs/design-system.md             # token/component/theme conventions
 - Light theme: nearly cream background (starting candidate `#F6F2E8`), lighter ivory surfaces, deep charcoal text, readable warm-gray secondary text, restrained olive/bronze accents.
 - Dark theme: warm charcoal background (starting candidate `#171816`), gently lifted charcoal surfaces, soft ivory text instead of pure white, readable warm-gray secondary text, existing cream accent.
 - Palette candidates are not final tokens. Calculate contrast before finalizing; keep all values in the canonical semantic theme definitions.
-- Typography/layout: retain the serif/sans pairing; use comfortable line heights, bounded reading widths, generous section spacing, and a consistent heading hierarchy. Reduce oversized headings where they crowd content.
+- Typography/layout: use a native system sans-serif stack for body and headings (supersedes the original serif/sans pairing); use comfortable line heights, bounded reading widths, generous section spacing, and a consistent heading hierarchy. Reduce oversized headings where they crowd content.
 - Surfaces: soften borders/shadows, limit glows, reserve gradients for a signature detail such as the name. Avoid equal emphasis on every card; allow suitable sections to sit directly on the page.
 - Motion: short fades, small movements, subtle consistent hover feedback. Remove animated number counters and long stagger sequences. Keep reading content immediately available and honor reduced motion.
 - Reading rhythm: clear section introductions, scannable project summaries, deeper detail on project pages. Preserve factual content and destinations; avoid unnecessary copy rewrites.
-- Navigation/actions: softly tinted header, restrained active indicator, compact accessible theme control; reserve strong button emphasis for primary actions.
+- Navigation/actions: softly tinted header, restrained active indicator, refined accessible theme selector with mode icon and custom chevron; compact icon-only control on small screens. Remember the last choice across refreshes/return visits using localStorage; System follows the device. Remove the Download CV button; reserve strong button emphasis for primary actions.
 - Implement these as shared token/component decisions, not scattered section-specific overrides. Document final choices in `docs/design-system.md`.
 
 ## Phases
@@ -150,6 +150,7 @@ Completed 2026-10-16. Legacy source/tooling/assets and redundant lockfile remove
 
 ## Handoff
 
+- Post-migration refinement (2026-10-16): applied native system sans-serif throughout, removed unused font dependencies and hero Download CV action, restyled theme selector with icons/custom chevron and compact mobile treatment. Existing localStorage persistence retained; returning-visit regression added. Build, typecheck, zero-warning lint, 17 tests and export checks pass (10 HTML files, 286 local references). No browser opened or deployment performed.
 - Active phase: none; all five migration phases complete. Branch: `codex/nextjs-migration`; changes remain uncommitted, with no deployment or production switch.
 - Final evidence: `docs/migration-phase-5.md`. Clean npm install, Webpack production export, strict typecheck, zero-warning lint, 16 theme/navigation/contrast tests, export checks and loopback HTTP smoke checks pass after cleanup. Ten HTML files and 300 local references/fragments resolve; all 480 original text segments and normalized link expectations remain in `tests/fixtures/legacy-content.json`. HTTP: 38 known paths return 200, three legacy bodies match canonical pages and five unknown paths return 404.
 - Cleanup: Vite/dependency subtree, old HTML/JS/CSS/generated CSS, unused assets, generated dist and Yarn lockfile removed. Pre-existing Vite edit retained as `docs/legacy-vite-entry.patch`; phase 1 archive checksum confirmed. Build scripts included in typecheck. Fixed mobile disclosure resize scroll restoration; documented design system/setup/static hosting.

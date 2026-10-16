@@ -13,7 +13,6 @@ export function Hero() {
           <p className="mt-6 text-lg text-secondary">{profile.summary}</p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
             <a href="#contact" className={actionStyles()}>Contact Info</a>
-            <a href={profile.resume} className={actionStyles("secondary")} download="Evans_Gitahi_Resume.pdf">Download CV</a>
           </div>
           <ul id="socials-container" aria-label="Social profiles" className="mt-6 flex flex-wrap gap-x-6 gap-y-2">
             {profile.socials.map(({ label, href }) => (

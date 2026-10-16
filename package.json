@@ -14,8 +14,6 @@
     "verify:http": "python3 scripts/check-http.py"
   },
   "devDependencies": {
-    "@fontsource-variable/cormorant-garamond": "5.3.0",
-    "@fontsource-variable/dm-sans": "5.3.0",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",

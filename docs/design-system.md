@@ -24,8 +24,8 @@ Contrast tests read actual CSS tokens. Across background/surface/elevated, minim
 
 ## Typography and layout
 
-- Body: DM Sans variable, Latin, weights 100–1000. Display: Cormorant Garamond variable, Latin, weights 300–700. Next's local font loader emits hashed, self-hosted WOFF2 files and preloads them with `font-display: swap`; no Google font request occurs at build time or from visitors. Files come from the exact-version Fontsource development packages; their licenses ship under `public/fonts/`.
-- Families are exposed as `font-body` and `font-display`, with sans/serif fallbacks. Body line height is 1.7. Shared heading styles use the display family and balanced wrapping.
+- Body and headings: one native system sans-serif stack, defined once as `--font-system`. Apple platforms use their native system typography; other platforms use Segoe UI/Roboto/Helvetica/Arial fallbacks. No downloaded or self-hosted font is required. This supersedes the original serif/sans pairing.
+- `font-body` and `font-display` both alias the shared stack. Body line height remains 1.7; headings retain centralized scale, tracking, weights, and balanced wrapping.
 - Use Tailwind's standard type/spacing scales for normal text, gaps, padding, and control sizes. Intentional exceptions are centralized: `text-hero` (60–104px, 1.05 line height), `text-heading` (40–64px, 1.15), and their tracking values. The new hero is smaller than the old 132px maximum.
 - `max-w-content` is 80rem; `max-w-reading` is 44rem. `Container` owns horizontal gutters (24/40/64px). Sections use `py-section-small` (72px) and `py-section` (96px). Body minimum width is 320px.
 - Navigation height tokens are `nav-mobile` (60px) and `nav` (80px). The fixed header uses these heights; the compact theme selector and mobile disclosure fit its row. Scroll padding follows the corresponding height plus a 1rem reading gap. The logo subtitle is hidden at the narrowest breakpoint.
@@ -57,12 +57,12 @@ Header navigation uses native details/summary on mobile and ordinary anchors in 
 
 ## Theme behavior and hydration
 
-- `theme/theme.ts` owns the preference contract: `light`, `dark`, or `system`. Storage key: `evans-portfolio-theme-v1`. Missing/invalid values use system; choosing system removes the explicit saved value.
+- `theme/theme.ts` owns the preference contract: `light`, `dark`, or `system`. Storage key: `evans-portfolio-theme-v1`. Missing/invalid values use system; choosing system removes the explicit saved value. localStorage retains light/dark choices across refreshes and browser restarts on the same origin/profile until site data is cleared; blocked storage allows a page-local choice only.
 - A small synchronous inline script in the root document head sets `data-theme` and `data-theme-preference` before body paint. It catches unavailable storage. Without JavaScript, CSS follows system preference and the nonfunctional selector stays disabled.
-- `ThemeControl` owns theme interactivity; the shared Header owns navigation interactivity. It uses a labeled native select with System/Light/Dark options and `useSyncExternalStore`; server rendering and first hydration both show disabled System. It then reflects the saved preference without rendering theme-dependent text/icons.
+- `ThemeControl` owns theme interactivity; the shared Header owns navigation interactivity. It uses a labeled native select with System/Light/Dark options, a custom chevron and mode icon, semantic surface/border colors, hover feedback and keyboard-only focus outline and `useSyncExternalStore`; server rendering and first hydration both show disabled System. It then reflects the saved preference with matching initial System markup. Decorative mode icons update after hydration.
 - `suppressHydrationWarning` is confined to `<html>`, where the pre-paint script intentionally sets two data attributes. Other markup must remain hydration-stable.
 - A system change updates the palette only in system mode. Same-tab changes notify the control, cross-tab storage events synchronize choices, and all media/storage/custom-event listeners are removed on unmount. If storage fails, an explicit choice still applies for the current page.
-- One compact theme control is mounted in the header, with its label visually hidden but still associated with the select. A client provider around the whole app is unnecessary. Keep the rest of the tree as Server Components by default.
+- One compact theme control is mounted in the header (icon-only below sm, icon/text/chevron above), with its label visually hidden but still associated with the select. A client provider around the whole app is unnecessary. Keep the rest of the tree as Server Components by default.
 - A future Content Security Policy must permit this initialization script via a hash or nonce. This static foundation sets no CSP, cookies, or server-only headers.
 
 ## Verification
@@ -82,3 +82,7 @@ Header/Footer project mode targets homepage fragments; Projects stays current, a
 Phase 5 reviewed theme coverage, responsive utilities, reading widths, heading/section relationships, native anchors, keyboard focus/skip links, disclosure semantics, listener cleanup, reduced motion, font/image sizing and hydration-stable initial markup. The disclosure resize handler checks the computed display of the **details element**, which desktop CSS hides; checking the summary would miss this ancestor-driven hiding and could leave scrolling locked. Event/geometry doubles cover that regression without claiming native browser validation.
 
 `npm run verify:export` compares all 480 original text segments and original normalized anchor destinations with the exported pages, checks all local references/fragments and confirms responsive/theme CSS and initial control markup. `npm run verify:http` adds loopback production-file requests and unknown-route status checks. Frozen expectations remain in `tests/fixtures/legacy-content.json`, so retired HTML is unnecessary. Python preview returns standard error bodies; production hosts should serve `404.html` with a 404 status.
+
+## Post-migration refinements
+
+The hero no longer renders a Download CV button; the existing public PDF remains available at its URL. Typography now uses the system stack throughout. Theme persistence was already implemented; a returning-visit regression test now reinitializes a fresh document from saved storage for light, dark, and system choices. Browser review remains excluded.

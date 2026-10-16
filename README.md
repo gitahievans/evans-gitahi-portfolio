@@ -25,7 +25,7 @@ Production builds use Next's Webpack option because the migration environment re
 - `src/app/` contains route composition, metadata, not-found output and the canonical CSS theme tokens.
 - `src/content/` holds typed profile, career, skills, project summaries and full case studies. Update factual portfolio content here.
 - `src/components/` contains shared primitives/layout, homepage sections, case-study rendering and scoped navigation/theme controls. Styles use semantic Tailwind utilities.
-- `public/images/` contains responsive WebP screenshots and the portrait favicon. `public/fonts/` contains font licenses; pinned Fontsource packages supply self-hosted font files at build time.
+- `public/images/` contains responsive WebP screenshots and the portrait favicon. Typography uses the native system sans-serif stack; no web fonts are loaded. `public/fonts/` retains historical font licenses.
 - `public/Evans_Gitahi_Resume.pdf` remains the public resume download.
 - `tests/fixtures/legacy-content.json` preserves original active text and normalized link expectations independently of the removed legacy HTML. Deliberate future copy/link changes should update the fixture as part of their review.
 

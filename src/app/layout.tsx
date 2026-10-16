@@ -1,23 +1,6 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { THEME_INIT_SCRIPT } from "@/components/theme/theme";
 import "./globals.css";
-
-const bodyFont = localFont({
-  src: "../../node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2",
-  variable: "--font-dm-sans",
-  display: "swap",
-  weight: "100 1000",
-  fallback: ["Arial", "sans-serif"],
-});
-
-const displayFont = localFont({
-  src: "../../node_modules/@fontsource-variable/cormorant-garamond/files/cormorant-garamond-latin-wght-normal.woff2",
-  variable: "--font-cormorant",
-  display: "swap",
-  weight: "300 700",
-  fallback: ["Georgia", "serif"],
-});
 
 export const metadata: Metadata = {
   icons: { icon: { url: "/images/evans-gitahi.jpg", type: "image/jpeg" } },
@@ -30,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bodyFont.variable} ${displayFont.variable}`} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script id="theme-init" dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
       </head>

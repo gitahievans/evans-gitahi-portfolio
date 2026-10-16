@@ -117,6 +117,21 @@ test("system changes follow system mode; explicit choices persist and ignore sys
   assert.equal(notifications, 3);
 });
 
+test("returning visits restore the last choice from durable storage before hydration", (t) => {
+  const env = environment(t, null);
+  env.bootstrap();
+  for (const preference of ["dark", "light", "system"] as const) {
+    setThemePreference(preference);
+    env.systemChange(true);
+    // A fresh document discards page state but retains the origin's saved storage.
+    delete env.root.dataset.theme;
+    delete env.root.dataset.themePreference;
+    env.bootstrap();
+    assert.equal(getThemeSnapshot(), preference);
+    assert.equal(env.root.dataset.theme, preference === "light" ? "light" : "dark");
+  }
+});
+
 test("system changes between the head script and subscription are reconciled", (t) => {
   const env = environment(t, null);
   env.bootstrap();
