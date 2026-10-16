@@ -25,11 +25,13 @@
     opacity: 0.72;
   }
 
-  #experience .about-containers {
+  #experience .about-containers,
+  #projects .about-containers {
     grid-template-columns: 1fr 1fr;
   }
 
-  #experience .details-container:last-child {
+  #experience .details-container:last-child,
+  #projects .details-container:last-child {
     grid-column: 1 / -1;
   }
 }
@@ -89,7 +91,8 @@
     grid-template-columns: 1fr;
   }
 
-  #experience .details-container:last-child {
+  #experience .details-container:last-child,
+  #projects .details-container:last-child {
     grid-column: auto;
   }
 
@@ -299,16 +302,8 @@
     font-size: 27px;
   }
 
-  .article-container-project {
-    aspect-ratio: 4 / 3;
-  }
-
-  .project-title,
-  .project-description,
-  .key-features,
-  #projects .color-container > .btn-container {
-    margin-right: 20px;
-    margin-left: 20px;
+  #projects .color-container {
+    padding: 26px 20px 22px;
   }
 
   .case-study-hero {

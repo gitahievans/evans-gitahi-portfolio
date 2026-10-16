@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll("#projects .color-container").forEach((project) => {
       [
-        [".article-container-project", "image"],
+        [".project-tech-stack", "tech"],
         [".project-title", "title"],
         [".project-description", "description"],
         [".key-features", "tags"],
