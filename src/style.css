@@ -506,7 +506,7 @@ section {
   justify-content: center;
   border: 1px solid var(--cream);
   border-radius: 2px;
-  /* padding: 13px 26px; */
+  padding: 13px 26px;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 0 100%;
@@ -648,6 +648,10 @@ section {
   text-transform: uppercase;
 }
 
+.about-evidence-item + .about-evidence-item {
+  margin-top: 14px;
+}
+
 .about-evidence-row strong {
   color: var(--text-primary);
   font-family: var(--font-display);
@@ -657,9 +661,9 @@ section {
 }
 
 .about-evidence-row small {
-  margin-top: 7px;
+  margin-top: 4px;
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.55;
 }
 
