@@ -72,8 +72,9 @@ export function Header({ name, subtitle, projectPage = false }: { name: string; 
   return (
     <header ref={header} data-tucked={tucked} onFocusCapture={() => setTucked(false)} data-scrolled={state.scrolled} className="tucking-header fixed top-0 z-(--z-navigation)">
       <div className="notch-content">
-        <a aria-label={`${name} — home`} title={subtitle} href={projectPage ? "/#profile" : "#profile"} className="shrink-0 rounded-control leading-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring">
+        <a aria-label={`${name} — ${subtitle} — home`} title={subtitle} href={projectPage ? "/#profile" : "#profile"} className="shrink-0 rounded-control leading-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring">
           <span className="notch-brand" aria-hidden="true">EG<span className="notch-brand-name"> / Evans Gitahi</span></span>
+          <span className="sr-only">{subtitle}</span>
         </a>
         <div className="flex items-center gap-3 desktop:gap-5">
           <nav id="desktop-nav" aria-label="Primary navigation" className="hidden desktop:block"><NavigationLinks projectPage={projectPage} active={projectPage ? "projects" : state.active} /></nav>
