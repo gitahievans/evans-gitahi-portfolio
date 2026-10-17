@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import { navigation, type NavigationSection } from "@/content/navigation";
 import { ThemeControl } from "@/components/theme/theme-control";
-import { Container } from "./container";
 import { attachMenuBehavior, subscribeToHomepageNavigation, type NavigationState } from "./navigation-behavior";
 
 function NavigationLinks({ active, mobile = false, projectPage = false }: { active: NavigationSection | null; mobile?: boolean; projectPage?: boolean }) {
@@ -25,6 +24,9 @@ function NavigationLinks({ active, mobile = false, projectPage = false }: { acti
 }
 
 export function Header({ name, subtitle, projectPage = false }: { name: string; subtitle: string; projectPage?: boolean }) {
+  const header = useRef<HTMLElement>(null);
+  const [tucked, setTucked] = useState(false);
+  const [progress, setProgress] = useState(0);
   const details = useRef<HTMLDetailsElement>(null);
   const summary = useRef<HTMLElement>(null);
   const [state, setState] = useState<NavigationState>({ active: null, scrolled: false });
@@ -38,14 +40,42 @@ export function Header({ name, subtitle, projectPage = false }: { name: string; 
     if (!details.current || !summary.current) return;
     return attachMenuBehavior(details.current, summary.current);
   }, []);
+  useEffect(() => {
+    let previous = window.scrollY;
+    let distance = 0;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const y = Math.max(0, window.scrollY);
+      const delta = y - previous;
+      distance = Math.sign(delta) === Math.sign(distance) ? distance + delta : delta;
+      const available = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(available > 0 ? Math.min(1, y / available) : 0);
+      if (y < 120) setTucked(false);
+      else if (!details.current?.open && !header.current?.contains(document.activeElement)) {
+        if (distance > 36) setTucked(true);
+        if (distance < -12) setTucked(false);
+      }
+      previous = y;
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    schedule();
+    return () => {
+      window.removeEventListener("scroll", schedule);
+      window.removeEventListener("resize", schedule);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+  const sectionLabel = projectPage ? "Project notes" : navigation.find(({ id }) => id === state.active)?.label ?? "Explore";
   return (
-    <header data-scrolled={state.scrolled} className="fixed inset-x-0 top-0 z-(--z-navigation) border-b border-border bg-surface/95 backdrop-blur-sm transition-shadow duration-(--duration-micro) ease-calm data-[scrolled=true]:shadow-surface">
-      <Container className="flex h-nav-mobile items-center justify-between gap-3 desktop:h-nav">
-        <a href={projectPage ? "/#profile" : "#profile"} className="shrink-0 rounded-control leading-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring">
-          <span className="block font-display text-xl font-medium sm:text-2xl">{name}</span>
-          <span className="hidden text-xs text-muted sm:block">{subtitle}</span>
+    <header ref={header} data-tucked={tucked} onFocusCapture={() => setTucked(false)} data-scrolled={state.scrolled} className="tucking-header fixed top-0 z-(--z-navigation)">
+      <div className="notch-content">
+        <a aria-label={`${name} — home`} title={subtitle} href={projectPage ? "/#profile" : "#profile"} className="shrink-0 rounded-control leading-tight focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-focus-ring">
+          <span className="notch-brand" aria-hidden="true">EG<span className="notch-brand-name"> / Evans Gitahi</span></span>
         </a>
-        <div className="flex items-center gap-3 desktop:gap-6">
+        <div className="flex items-center gap-3 desktop:gap-5">
           <nav id="desktop-nav" aria-label="Primary navigation" className="hidden desktop:block"><NavigationLinks projectPage={projectPage} active={projectPage ? "projects" : state.active} /></nav>
           <ThemeControl compact />
           <details ref={details} id="hamburger-nav" className="group desktop:hidden">
@@ -59,7 +89,19 @@ export function Header({ name, subtitle, projectPage = false }: { name: string; 
             <nav id="mobile-menu-links" aria-label="Mobile navigation" className="absolute top-full right-0 z-(--z-menu) max-h-menu-height w-full max-w-menu overflow-y-auto border-b border-l border-border bg-surface p-6 shadow-surface"><NavigationLinks projectPage={projectPage} active={projectPage ? "projects" : state.active} mobile /></nav>
           </details>
         </div>
-      </Container>
+      </div>
+      <button
+        type="button"
+        className="nav-bookmark"
+        aria-label={`Show navigation — ${sectionLabel}`}
+        onClick={() => { setTucked(false); header.current?.querySelector<HTMLAnchorElement>("a")?.focus(); }}
+        tabIndex={tucked ? 0 : -1}
+      >
+        <span className="nav-bookmark-monogram" aria-hidden="true">EG<span>↗</span></span>
+        <span className="nav-bookmark-label">{sectionLabel}</span>
+        <span className="nav-bookmark-grip" aria-hidden="true"><i /><i /></span>
+        <span className="nav-bookmark-progress" style={{ transform: `scaleX(${progress})` }} />
+      </button>
     </header>
   );
 }

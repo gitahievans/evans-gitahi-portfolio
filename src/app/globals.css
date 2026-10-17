@@ -172,3 +172,87 @@
     transition: none !important;
   }
 }
+
+/* A little bookmark stays behind when the navigation slips off the page. */
+.tucking-header {
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 3rem);
+  background: var(--surface);
+  color: var(--foreground);
+  border-radius: 0 0 1.25rem 1.25rem;
+  transform: translateX(-50%);
+  transition: transform 480ms var(--ease-calm), box-shadow 240ms ease;
+}
+.tucking-header[data-tucked="true"] { transform: translate(-50%, -100%); }
+.tucking-header:focus-within { transform: translate(-50%, 0); }
+.tucking-header::before, .tucking-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  background: var(--surface);
+}
+.tucking-header::before {
+  right: 100%;
+  mask-image: radial-gradient(circle at 0 100%, transparent 19.5px, #000 20px);
+}
+.tucking-header::after {
+  left: 100%;
+  mask-image: radial-gradient(circle at 100% 100%, transparent 19.5px, #000 20px);
+}
+.notch-content { display: flex; height: 60px; padding: 0 1rem; align-items: center; justify-content: space-between; gap: 1.75rem; }
+.notch-brand { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; white-space: nowrap; }
+.notch-brand-name { display: none; }
+@media (width >= 68.8125rem) {
+  .tucking-header { width: 48rem; }
+  .notch-content { height: 64px; padding: 0 1.75rem; gap: 2.5rem; }
+  .tucking-header #desktop-nav ul { gap: 1.75rem; }
+}
+@media (width < 68.8125rem) {
+  .tucking-header { width: min(23rem, calc(100% - 3rem)); }
+  .notch-content { gap: 1rem; }
+  .notch-brand-name { display: inline; font-size: 1rem; font-weight: 400; }
+  .tucking-header #mobile-menu-links { max-height: calc(100svh - 80px); border: 1px solid var(--border); border-radius: 1rem; margin-top: 0.5rem; }
+}
+@media (width < 25rem) {
+  .notch-brand-name { display: none; }
+}
+.nav-bookmark {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  height: 44px;
+  padding: 0 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-top: 0;
+  border-radius: 0 0 1rem 1rem;
+  background: var(--surface);
+  color: var(--foreground);
+  box-shadow: var(--surface-shadow);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  transform: translate(-50%, -12px);
+  transition: opacity 200ms ease, transform 480ms var(--ease-calm), visibility 480ms;
+}
+[data-tucked="true"] .nav-bookmark {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.nav-bookmark:hover { background: var(--elevated); }
+.nav-bookmark:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 4px; }
+.nav-bookmark-monogram { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; }
+.nav-bookmark-monogram span { margin-left: 0.3rem; font-family: var(--font-body); font-size: 0.75rem; color: var(--accent); }
+.nav-bookmark-label { border-left: 1px solid var(--border); padding-left: 0.85rem; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.nav-bookmark-grip { display: flex; gap: 3px; margin-left: 0.4rem; }
+.nav-bookmark-grip i { width: 2px; height: 10px; border-radius: 2px; background: var(--muted); }
+.nav-bookmark-progress { position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: var(--accent); transform-origin: left; transition: transform 150ms linear; }
